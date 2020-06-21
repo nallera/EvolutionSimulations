@@ -1,0 +1,4522 @@
+{
+  "data": [
+    [
+      [
+        {
+          "Id": 0,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 14.533191795891959,
+            "Y": 7.6889585997357495
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 1,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 13.449170929016756,
+            "Y": 11.804991798743732
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 0.8624991483443344,
+            "Y": 6.067858113762338
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 3,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 2.4707792757610383,
+            "Y": 4.842886861826395
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.947323204917364,
+            "Y": 12.403392815677012
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 8.334336416255862,
+            "Y": 9.928681653661062
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "Id": 0,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 14.077568690406643,
+            "Y": 7.233335494250434
+          },
+          "FoodInReachIds": [
+            97
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 1,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 13.570310594641398,
+            "Y": 11.926131464368375
+          },
+          "FoodInReachIds": [
+            46
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 0.27620488432831225,
+            "Y": 5.481563849746316
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 3,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.6991536569885222,
+            "Y": 4.071261243053879
+          },
+          "FoodInReachIds": [
+            72
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.758558379934504,
+            "Y": 12.214627990694153
+          },
+          "FoodInReachIds": [
+            41
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 8.354074208204997,
+            "Y": 9.948419445610197
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "Id": 0,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 14.238356682493507,
+            "Y": 7.394123486337296
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 1,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 13.312941485192951,
+            "Y": 11.668762354919927
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 0.8055623237020417,
+            "Y": 6.010921289120046
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 3,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.5785255715074178,
+            "Y": 3.9506331575727747
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.666811296397101,
+            "Y": 12.122880907156748
+          },
+          "FoodInReachIds": [
+            69
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 8.131016515374911,
+            "Y": 9.725361752780112
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "Id": 0,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 14.334228081421484,
+            "Y": 7.489994885265275
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 1,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 13.405802417308463,
+            "Y": 11.76162328703544
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.6731114996221848,
+            "Y": 6.878470465040189
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 3,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 2.427122134653259,
+            "Y": 4.799229720718616
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.7387236589768165,
+            "Y": 12.194793269736463
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 7.77686919936774,
+            "Y": 9.37121443677294
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "Id": 0,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.625569876007328,
+            "Y": 14.459847407993582
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 1,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 9.14333822206767,
+            "Y": 12.936841830991776
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 6.804700802477334,
+            "Y": 1.030441616698305
+          },
+          "FoodInReachIds": [
+            22
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 3,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 7.09146780719324,
+            "Y": 5.27343774421507
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 13.512519200465535,
+            "Y": 11.402399097185418
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 10.556932859349853,
+            "Y": 5.49908600208808
+          },
+          "FoodInReachIds": [
+            20
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 6,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.712242964676133,
+            "Y": 5.345814143157846
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "Id": 0,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.382904291890663,
+            "Y": 14.217181823876917
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 1,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 8.58202812387384,
+            "Y": 12.375531732797945
+          },
+          "FoodInReachIds": [
+            7,
+            21
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 7.370631761156926,
+            "Y": 1.596372575377897
+          },
+          "FoodInReachIds": [
+            56,
+            70,
+            98
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 3,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 6.6274990735008785,
+            "Y": 4.809469010522709
+          },
+          "FoodInReachIds": [
+            26
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 13.582798684045386,
+            "Y": 11.472678580765269
+          },
+          "FoodInReachIds": [
+            35
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 10.194939594319523,
+            "Y": 5.137092737057749
+          },
+          "FoodInReachIds": [
+            36,
+            50,
+            90
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 6,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.554034528858544,
+            "Y": 5.187605707340258
+          },
+          "FoodInReachIds": [
+            25,
+            40
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "Id": 0,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.398597776502223,
+            "Y": 14.232875308488477
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 1,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 8.56581409579908,
+            "Y": 12.359317704723185
+          },
+          "FoodInReachIds": [
+            18,
+            83
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 6.997087301269916,
+            "Y": 1.2228281154908864
+          },
+          "FoodInReachIds": [
+            4,
+            13
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 3,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 6.6258931081316925,
+            "Y": 4.807863045153523
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 13.994190004529917,
+            "Y": 11.8840699012498
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 9.774501718670802,
+            "Y": 4.716654861409028
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 6,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 3.9606082022976725,
+            "Y": 4.594179380779386
+          },
+          "FoodInReachIds": [
+            22
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "Id": 0,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.258080318333559,
+            "Y": 14.092357850319813
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 1,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 8.226956702631933,
+            "Y": 12.020460311556038
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 6.947600018602373,
+            "Y": 1.173340832823344
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 3,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 6.740629161219574,
+            "Y": 4.922599098241404
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 13.587079372875948,
+            "Y": 11.476959269595831
+          },
+          "FoodInReachIds": [
+            78
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 10.638618644001122,
+            "Y": 5.580771786739349
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 6,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.0291085359515995,
+            "Y": 4.662679714433313
+          },
+          "FoodInReachIds": [
+            45
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "Id": 1,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 2.386285483158852,
+            "Y": 12.232259101881361
+          },
+          "FoodInReachIds": [
+            57
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 7.884804506132062,
+            "Y": 12.078637135582579
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 3,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 3.825972955864819,
+            "Y": 6.444425703039569
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 10.925175896513212,
+            "Y": 13.813261064781782
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.227464488846252,
+            "Y": 7.955187752854884
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 6,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 13.283974231684203,
+            "Y": 14.919819242614803
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 7,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 12.467649409006235,
+            "Y": 0.6922848653338785
+          },
+          "FoodInReachIds": [
+            57
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 8,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 7.529510972162535,
+            "Y": 0.4807544979764469
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 9,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.653928878523773,
+            "Y": 9.29388300013949
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 10,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 10.101088151023067,
+            "Y": 12.124480709131797
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 11,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 10.334113983110178,
+            "Y": 9.962859423796647
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "Id": 1,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 2.5366953761758575,
+            "Y": 12.382668994898367
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 7.748433659632849,
+            "Y": 11.942266289083365
+          },
+          "FoodInReachIds": [
+            78
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 3,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.316178953477449,
+            "Y": 6.934631700652199
+          },
+          "FoodInReachIds": [
+            40,
+            66,
+            83,
+            95
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 11.068524198876448,
+            "Y": 13.956609367145019
+          },
+          "FoodInReachIds": [
+            33
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.4161799552994125,
+            "Y": 8.143903219308044
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 6,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 13.22190696804505,
+            "Y": 14.85775197897565
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 7,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 13.105992420427208,
+            "Y": 1.330627876754852
+          },
+          "FoodInReachIds": [
+            56
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 8,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 7.4601053995210505,
+            "Y": 0.41134892533496253
+          },
+          "FoodInReachIds": [
+            96
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 9,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.8747144845191457,
+            "Y": 9.514668606134862
+          },
+          "FoodInReachIds": [
+            1,
+            11,
+            16,
+            22,
+            46,
+            62
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 10,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 9.75508063975214,
+            "Y": 11.77847319786087
+          },
+          "FoodInReachIds": [
+            5,
+            35
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 11,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 10.068472908195549,
+            "Y": 9.697218348882018
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "Id": 1,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 2.4417207792978397,
+            "Y": 12.28769439802035
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 7.298413352987291,
+            "Y": 11.492245982437808
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 3,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 3.953097696516397,
+            "Y": 6.571550443691147
+          },
+          "FoodInReachIds": [
+            1
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 10.793452101308072,
+            "Y": 13.681537269576642
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.786922987299015,
+            "Y": 8.514646251307646
+          },
+          "FoodInReachIds": [
+            31
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 6,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 12.756210080134005,
+            "Y": 14.392055091064606
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 7,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 12.665209750662259,
+            "Y": 0.8898452069899023
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 8,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 7.765223736602019,
+            "Y": 0.7164672624159314
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 9,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.0039259728659555,
+            "Y": 8.643880094481672
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 10,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 9.670257872569191,
+            "Y": 11.693650430677922
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 11,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 10.26880627870888,
+            "Y": 9.897551719395349
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "Id": 1,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 2.161930455764269,
+            "Y": 12.00790407448678
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 6.874284144392569,
+            "Y": 11.068116773843087
+          },
+          "FoodInReachIds": [
+            53
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 3,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 3.939661219158388,
+            "Y": 6.5581139663331385
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 11.264133515107979,
+            "Y": 14.15221868337655
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.829031687404023,
+            "Y": 8.556754951412655
+          },
+          "FoodInReachIds": [
+            6,
+            63
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 6,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 12.483945686530525,
+            "Y": 14.119790697461125
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 7,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 12.746662003506673,
+            "Y": 0.971297459834316
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 8,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 8.295421726356409,
+            "Y": 1.246665252170322
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 9,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.3388098678583198,
+            "Y": 8.978763989474036
+          },
+          "FoodInReachIds": [
+            64
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 10,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 9.08796162923994,
+            "Y": 11.11135418734867
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 11,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 11.190109434050077,
+            "Y": 10.818854874736546
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 8.558060389495413,
+            "Y": 13.88788884988415
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 3,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 5.290740541702837,
+            "Y": 4.580575434215059
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 2.3064162407976685,
+            "Y": 10.750592353771813
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.0134366685208966,
+            "Y": 4.867731476103196
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 7,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.2303145902098302,
+            "Y": 4.7927944305976435
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 8,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 10.578895885578737,
+            "Y": 2.5877913810236888
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 9,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 10.924315581326296,
+            "Y": 7.206693453608177
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 10,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 3.567360589974964,
+            "Y": 14.103734229704012
+          },
+          "FoodInReachIds": [
+            61
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 11,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 9.194077852653027,
+            "Y": 0.05758417671305904
+          },
+          "FoodInReachIds": [
+            30
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 12,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 6.528764416165311,
+            "Y": 8.313963067319463
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 13,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 0.5998086470348963,
+            "Y": 11.751697392942537
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 14,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 2.322514931195867,
+            "Y": 9.355786824138947
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 15,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 10.511294807928012,
+            "Y": 11.69062423310803
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 16,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.401034161267551,
+            "Y": 4.338982890150235
+          },
+          "FoodInReachIds": [
+            61
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 8.02204881131393,
+            "Y": 13.351877271702667
+          },
+          "FoodInReachIds": [
+            33,
+            97
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 3,
+          "Health": 80.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 5.3249644090576265,
+            "Y": 4.614799301569849
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [
+            16
+          ],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 2.9319842696927108,
+            "Y": 11.376160382666855
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 90.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 0.46902438808875635,
+            "Y": 4.323319195671056
+          },
+          "FoodInReachIds": [
+            13,
+            41
+          ],
+          "CreaturesInReachIds": [
+            7
+          ],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 7,
+          "Health": 90.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.0669330961527363,
+            "Y": 4.629412936540549
+          },
+          "FoodInReachIds": [
+            13,
+            41
+          ],
+          "CreaturesInReachIds": [
+            5
+          ],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 8,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 10.598186757888609,
+            "Y": 2.607082253333562
+          },
+          "FoodInReachIds": [
+            58
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 9,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 11.128774864033078,
+            "Y": 7.41115273631496
+          },
+          "FoodInReachIds": [
+            47
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 10,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.051573512648254,
+            "Y": 14.587947152377302
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 11,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 9.189204469885848,
+            "Y": 0.0527107939458794
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 12,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 5.7903633347770125,
+            "Y": 7.575561985931165
+          },
+          "FoodInReachIds": [
+            96
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 13,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 0.952315057699342,
+            "Y": 12.104203803606984
+          },
+          "FoodInReachIds": [
+            14,
+            36,
+            64
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 14,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 2.3975706866595985,
+            "Y": 9.430842579602679
+          },
+          "FoodInReachIds": [
+            63,
+            91
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 15,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 9.862335527903973,
+            "Y": 11.041664953083991
+          },
+          "FoodInReachIds": [
+            72
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 16,
+          "Health": 90.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 5.114490438456462,
+            "Y": 5.052439167339146
+          },
+          "FoodInReachIds": [
+            15
+          ],
+          "CreaturesInReachIds": [
+            3
+          ],
+          "Traits": [
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 8.966606769841217,
+            "Y": 14.296435230229955
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 3,
+          "Health": 60.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 5.512428320429939,
+            "Y": 4.802263212942162
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [
+            16
+          ],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 2.7210946853549056,
+            "Y": 11.16527079832905
+          },
+          "FoodInReachIds": [
+            21,
+            62
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 80.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 0.26514419649380994,
+            "Y": 4.11943900407611
+          },
+          "FoodInReachIds": [
+            30
+          ],
+          "CreaturesInReachIds": [
+            7
+          ],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 7,
+          "Health": 80.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.6988044567540912,
+            "Y": 5.261284297141904
+          },
+          "FoodInReachIds": [
+            30
+          ],
+          "CreaturesInReachIds": [
+            5
+          ],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 8,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 10.604998101497898,
+            "Y": 2.613893596942851
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 9,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 10.947357938323881,
+            "Y": 7.229735810605763
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 10,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.3315942809309576,
+            "Y": 14.867967920660005
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 11,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 9.387984050920174,
+            "Y": 0.25149037498020516
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 12,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 5.453504638091795,
+            "Y": 7.238703289245947
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 13,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 0.44397212591635393,
+            "Y": 11.595860871823996
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 14,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 2.006113673367675,
+            "Y": 9.039385566310756
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 15,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 9.172126816737268,
+            "Y": 10.351456241917287
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 16,
+          "Health": 80.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.903480123652362,
+            "Y": 4.841428852535046
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [
+            3
+          ],
+          "Traits": [
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 9.27764236483971,
+            "Y": 14.607470825228448
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 3,
+          "Health": 40.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 5.507166201785691,
+            "Y": 4.797001094297913
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [
+            16
+          ],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 3.081099122828921,
+            "Y": 11.525275235803067
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 80.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 0.0616297296986531,
+            "Y": 3.915924537280953
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 7,
+          "Health": 80.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.8699762467251797,
+            "Y": 5.4324560871129925
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 8,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 10.60756828207122,
+            "Y": 2.616463777516174
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 9,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 11.302916616309634,
+            "Y": 7.585294488591516
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 10,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 3.95715073877871,
+            "Y": 14.493524378507757
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 11,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 9.977364851073503,
+            "Y": 0.8408711751335343
+          },
+          "FoodInReachIds": [
+            12
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 12,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 5.10897121758056,
+            "Y": 6.894169868734712
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 13,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 0.2721872141367925,
+            "Y": 11.424075960044435
+          },
+          "FoodInReachIds": [
+            26
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 14,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 2.091927524690242,
+            "Y": 9.125199417633322
+          },
+          "FoodInReachIds": [
+            7,
+            35,
+            72
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 15,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 9.743796536193573,
+            "Y": 10.923125961373591
+          },
+          "FoodInReachIds": [
+            31,
+            66,
+            73
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 16,
+          "Health": 70.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.92445187925976,
+            "Y": 4.862400608142443
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [
+            3
+          ],
+          "Traits": [
+            1
+          ]
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 9.15206459633123,
+            "Y": 13.805027706881054
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.253400989816833,
+            "Y": 8.877541131173635
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 14.722022959531808,
+            "Y": 0.40805248159968943
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 7,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 11.529061861388069,
+            "Y": 11.720315972018323
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 8,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 14.530283913885901,
+            "Y": 3.1687216924065043
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 9,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 11.579809718155829,
+            "Y": 7.76887820469225
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 11,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 0.6289848129277047,
+            "Y": 8.120109680152362
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 12,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 12.732841664168323,
+            "Y": 6.711445443962322
+          },
+          "FoodInReachIds": [
+            39
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 13,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 0.5832704859642287,
+            "Y": 13.318433735381978
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 14,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 3.717472678476781,
+            "Y": 10.921389188673146
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 15,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 11.274035589536599,
+            "Y": 1.6245178626153478
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 16,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 7.2239441141520695,
+            "Y": 7.258022962716172
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [
+            3
+          ],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 17,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.198915663414161,
+            "Y": 7.019487255873883
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 18,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 12.706646730480525,
+            "Y": 14.170697909353134
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 19,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 5.400417893883806,
+            "Y": 8.602321999000374
+          },
+          "FoodInReachIds": [
+            39
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 20,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 13.177296036850864,
+            "Y": 0.21823346895788437
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 21,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 2.010899370328624,
+            "Y": 1.2987760407114837
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 22,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 14.579764813038244,
+            "Y": 6.5046934758361115
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 9.561534483909766,
+            "Y": 14.214497594459589
+          },
+          "FoodInReachIds": [
+            63,
+            92
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.037640947702266,
+            "Y": 8.661781089059067
+          },
+          "FoodInReachIds": [
+            27,
+            64
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 14.640611757619817,
+            "Y": 0.3266412796876987
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 7,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 11.598485375934251,
+            "Y": 11.789739486564505
+          },
+          "FoodInReachIds": [
+            36,
+            37
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 8,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 14.000695574474099,
+            "Y": 2.639133352994701
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 9,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 11.156015295531459,
+            "Y": 7.34508378206788
+          },
+          "FoodInReachIds": [
+            4,
+            16,
+            42,
+            88
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 11,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.1566385298445359,
+            "Y": 8.647763397069193
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 12,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 12.672520277752914,
+            "Y": 6.651124057546915
+          },
+          "FoodInReachIds": [
+            53,
+            89
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 13,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 0.47230548850741905,
+            "Y": 13.207468737925169
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 14,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 2.991689099861119,
+            "Y": 10.195605610057484
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 15,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 11.30275936526955,
+            "Y": 1.6532416383482984
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 16,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 6.502021373776698,
+            "Y": 6.5361002223408
+          },
+          "FoodInReachIds": [
+            18
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 17,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.145718287400166,
+            "Y": 6.966289879859888
+          },
+          "FoodInReachIds": [
+            17,
+            82,
+            98
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 18,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 12.499435184112098,
+            "Y": 13.963486362984707
+          },
+          "FoodInReachIds": [
+            9,
+            29,
+            74,
+            80,
+            90
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 19,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 6.294963186239478,
+            "Y": 9.496867291356045
+          },
+          "FoodInReachIds": [
+            67
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 20,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 13.187013120396479,
+            "Y": 0.2279505525034996
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 21,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.81651021073096,
+            "Y": 1.1043868811138198
+          },
+          "FoodInReachIds": [
+            38,
+            65
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 22,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 14.612523830642932,
+            "Y": 6.5374524934407985
+          },
+          "FoodInReachIds": [
+            10,
+            24
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 9.684044322850022,
+            "Y": 14.337007433399846
+          },
+          "FoodInReachIds": [
+            42
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 3.984951784827226,
+            "Y": 8.609091926184028
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 14.8200314745742,
+            "Y": 0.506060996642081
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 7,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 12.000778096430528,
+            "Y": 12.192032207060782
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 8,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 13.770381827292667,
+            "Y": 2.4088196058132696
+          },
+          "FoodInReachIds": [
+            65
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 9,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 11.071848099786935,
+            "Y": 7.260916586323356
+          },
+          "FoodInReachIds": [
+            39
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 11,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.025952976228341,
+            "Y": 8.517077843452999
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 12,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 13.13016406772436,
+            "Y": 7.108767847518361
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 13,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 0.3332885891023071,
+            "Y": 13.068451838520057
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 14,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 2.9583367471619195,
+            "Y": 10.162253257358284
+          },
+          "FoodInReachIds": [
+            31,
+            53,
+            54
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 15,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 11.375285713423997,
+            "Y": 1.7257679865027455
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 16,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 6.162431048001912,
+            "Y": 6.196509896566015
+          },
+          "FoodInReachIds": [
+            58
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 17,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 4.121273162084097,
+            "Y": 6.941844754543818
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 18,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 12.511019811465351,
+            "Y": 13.97507099033796
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 19,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 6.876818294983609,
+            "Y": 10.078722400100176
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 20,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 13.422688609653592,
+            "Y": 0.4636260417606137
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 21,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.5452758398770146,
+            "Y": 0.8331525102598742
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 22,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 14.698329979546683,
+            "Y": 6.62325864234455
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        }
+      ],
+      [
+        {
+          "Id": 2,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 9.641696839381511,
+            "Y": 14.294659949931335
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 4,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 3.966764961834694,
+            "Y": 8.590905103191497
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 5,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 14.711552939061354,
+            "Y": 0.3975824611292344
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 7,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 11.929928159833185,
+            "Y": 12.12118227046344
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 8,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 14.334731706686684,
+            "Y": 2.9731694852072867
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 9,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 10.87263523544775,
+            "Y": 7.061703721984171
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 11,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.909229592472343,
+            "Y": 9.400354459697
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 12,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 14.033634615114384,
+            "Y": 8.012238394908383
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 13,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 0.3683413702070612,
+            "Y": 13.103504619624811
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 14,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 2.4896511067574942,
+            "Y": 9.693567616953858
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 15,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 11.433717219253493,
+            "Y": 1.7841994923322417
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 16,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 6.527137473845865,
+            "Y": 6.561216322409968
+          },
+          "FoodInReachIds": [
+            23
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 17,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 5.116015544979909,
+            "Y": 7.936587137439631
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 18,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 11.961658647545947,
+            "Y": 13.425709826418556
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 19,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 7.2209940492806775,
+            "Y": 10.422898154397245
+          },
+          "FoodInReachIds": [
+            65
+          ],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 20,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 13.520362616715106,
+            "Y": 0.5613000488221278
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            0
+          ]
+        },
+        {
+          "Id": 21,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 1.5870290599784085,
+            "Y": 0.8749057303612683
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        },
+        {
+          "Id": 22,
+          "Health": 100.0,
+          "AttackPower": 10.0,
+          "MaxSpeed": 1.0,
+          "Reach": 1.0,
+          "FoodCollected": 0.0,
+          "FoodCollectedLastDay": 0.0,
+          "NextStatus": 0,
+          "Position": {
+            "X": 14.989440712319212,
+            "Y": 6.9143693751170785
+          },
+          "FoodInReachIds": [],
+          "CreaturesInReachIds": [],
+          "Traits": [
+            1
+          ]
+        }
+      ]
+    ]
+  ]
+}

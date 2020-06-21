@@ -10,8 +10,8 @@ namespace EvolutionSimulations
 
         private Random _randomGen;
 
-        public int Health;
-        public int AttackPower;
+        public double Health;
+        public double AttackPower;
         public double MaxSpeed;
         public double Reach;
         public List<CreatureTrait> Traits { get; set; }
@@ -51,8 +51,8 @@ namespace EvolutionSimulations
         {
             Id = id;
 
-            Health = 100;
-            AttackPower = 10;
+            Health = 100.0;
+            AttackPower = 10.0;
             MaxSpeed = 1.0;
             Reach = 1.0;
             Traits = new List<CreatureTrait>(traits);
@@ -139,16 +139,31 @@ namespace EvolutionSimulations
             FoodCollected = 0;
         }
 
-        internal void TakeDamageFromFight(Creature creature)
+        public double TakeDamageFromFight(Creature creature)
         {
             if (Traits.Contains(CreatureTrait.Friendly))
             {
-                if (creature.Traits.Contains(CreatureTrait.Hostile)) Health -= 50;
+                if (creature.Traits.Contains(CreatureTrait.Hostile))
+                {
+                    Health -= creature.AttackPower * 2;
+                    return creature.AttackPower * 2;
+                }
             }
             else if (Traits.Contains(CreatureTrait.Hostile))
             {
-                if (creature.Traits.Contains(CreatureTrait.Hostile)) Health -= 25;
+                if (creature.Traits.Contains(CreatureTrait.Hostile))
+                {
+                    Health -= creature.AttackPower;
+                    return creature.AttackPower;
+                }
+                else if (creature.Traits.Contains(CreatureTrait.Friendly))
+                {
+                    Health -= creature.AttackPower;
+                    return creature.AttackPower;
+                }
             }
+
+            return 0.0;
         }
 
         internal void CheckSurroundings(List<CreatureIdAndPosition> creatures, List<Food> food)
@@ -191,12 +206,10 @@ namespace EvolutionSimulations
             return foodInReach;
         }
 
-        
-
         internal void Reset()
         {
-            Health = 100;
-            AttackPower = 10;
+            Health = 100.0;
+            AttackPower = 10.0;
             MaxSpeed = 1.0;
             Reach = 1.0;
         }

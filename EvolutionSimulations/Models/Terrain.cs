@@ -47,6 +47,11 @@ namespace EvolutionSimulations
             FoodUnits.Clear();
         }
 
+        internal void RemoveEatenFood()
+        {
+            FoodUnits.RemoveAll(f => f.Eaten);
+        }
+
         //public void PrintTerrain()
         //{
         //    foreach (var line in Cells)

@@ -1,6 +1,6 @@
 ﻿namespace EvolutionSimulations
 {
-    internal class Mutation
+    public enum Mutation
     {
     }
 }

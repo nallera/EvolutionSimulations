@@ -5,22 +5,22 @@ using System.Runtime.CompilerServices;
 
 namespace EvolutionSimulations
 {
-    internal class DayStepResult<T>
+    public class DayStepResult<T>
     {
-        private T[][] data;
+        public List<List<T>> data;
 
-        public DayStepResult(int days, int steps)
+        public DayStepResult()
         {
-            data = new T[days][];
-            for(int i = 0; i < days; i++)
-            {
-                data[i] = new T[steps];
-            }
+            data = new List<List<T>>();
         }
 
-        public void AddStep(T stepData, int day, int step)
+        public void AddStep(T stepData, int day)
         {
-            data[day][step] = stepData;
+            if (day >= data.Count)
+            {
+                data.Add(new List<T>());
+            }
+            data[day].Add(stepData);
         }
 
         public T GetDayStep(int day, int step)
@@ -28,7 +28,7 @@ namespace EvolutionSimulations
             return data[day][step];
         }
 
-        public T[] GetDay(int day)
+        public List<T> GetDay(int day)
         {
             return data[day];
         }

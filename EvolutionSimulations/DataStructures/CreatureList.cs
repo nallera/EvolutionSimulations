@@ -29,10 +29,10 @@ namespace EvolutionSimulations
             return creatures.Count;
         }
 
-        public int AddNewCreature(List<CreatureTrait> traits)
+        public int AddNewCreature(PopulationType populationType)
         {
             lastId++;
-            creatures.Add(new Creature(lastId, traits));
+            creatures.Add(new Creature(lastId, populationType.Traits));
 
             return creatures.Count;
         }
@@ -106,29 +106,22 @@ namespace EvolutionSimulations
             {
                 if (creature.FoodInReachIds.Count != 0)
                 {
-                    if (creature.CreaturesInReachIds.Count != 0)
+                    foreach (int foodId in creature.FoodInReachIds)
                     {
-                        foreach (int creatureInReachId in creature.CreaturesInReachIds)
-                        {
-                            creature.TakeDamageFromFight(creatures.Find(c => c.Id == creatureInReachId));
-                        }
-                        foreach (int foodId in creature.FoodInReachIds)
-                        {
-                            creature.FoodCollected += 1.0 / foodUnits[foodId].ReachingCreatures.Count; //SI REACHEA LA FOOD NO NECESARIAMENTE REACHEA A LA OTRA CREATURE, VER
-                        }
-                    }
-                    else
-                    {
-                        creature.FoodCollected += creature.FoodInReachIds.Count;
+                        creature.FoodCollected += 1.0 / foodUnits[foodId].ReachingCreatures.Count;
+                        foodUnits[foodId].Eaten = true;
+                        Console.WriteLine($"Creature ID#{creature.Id} collected {1.0 / foodUnits[foodId].ReachingCreatures.Count:N2} food " +
+                            $"from food ID#{foodId}, {foodUnits[foodId].ReachingCreatures.Count} creature(s) ate from this food.");
                     }
                 }
-                else
+                if (creature.CreaturesInReachIds.Count != 0)
                 {
-                    if (creature.CreaturesInReachIds.Count != 0)
+                    foreach (int creatureInReachId in creature.CreaturesInReachIds)
                     {
-                        foreach (int creatureInReachId in creature.CreaturesInReachIds)
+                        double damageTaken = creatures.Find(c => c.Id == creatureInReachId).TakeDamageFromFight(creature);
+                        if (damageTaken != 0.0)
                         {
-                            creature.TakeDamageFromFight(creatures.Find(c => c.Id == creatureInReachId));
+                            Console.WriteLine($"Creature ID#{creature.Id} fought with creature ID#{creatureInReachId}, and caused it {damageTaken:N2} damage.");
                         }
                     }
                 }

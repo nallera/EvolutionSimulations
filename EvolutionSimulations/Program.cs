@@ -8,38 +8,37 @@ namespace EvolutionSimulations
     {
         static void Main(string[] args)
         {
-            int xLimit = 5;
-            int yLimit = 5;
+            int xLimit = 15;
+            int yLimit = 15;
 
             Terrain simulationTerrain = new Terrain(xLimit, yLimit);
 
             int simulationDays = 5;
             int stepsPerDay = 4;
-            int foodPerDay = 3;
+            int foodPerDay = 100;
             int foodToSurvive = 1;
             int foodToReproduce = 2;
             CreatureList initialCreatures = new CreatureList();
             List<Mutation> mutations = new List<Mutation>();
+            Population populations = new Population(new List<PopulationType>
+            {
+                new PopulationType { CreatureTrait.Friendly }, 
+                new PopulationType { CreatureTrait.Hostile },
+                new PopulationType { CreatureTrait.Friendly, CreatureTrait.Hostile },
+            });
 
-            initialCreatures.AddNewCreature(new List<CreatureTrait> { CreatureTrait.Friendly });
-            initialCreatures.AddNewCreature(new List<CreatureTrait> { CreatureTrait.Hostile });
-            initialCreatures.AddNewCreature(new List<CreatureTrait> { CreatureTrait.Friendly });
-            initialCreatures.AddNewCreature(new List<CreatureTrait> { CreatureTrait.Friendly });
+            initialCreatures.AddNewCreature(populations.PopulationTypes[0]);
+            initialCreatures.AddNewCreature(populations.PopulationTypes[1]);
+            initialCreatures.AddNewCreature(populations.PopulationTypes[0]);
+            initialCreatures.AddNewCreature(populations.PopulationTypes[0]);
+            initialCreatures.AddNewCreature(populations.PopulationTypes[1]);
+            initialCreatures.AddNewCreature(populations.PopulationTypes[1]);
 
-            Simulation simulationVar = new Simulation(simulationTerrain, simulationDays, stepsPerDay, initialCreatures, mutations, foodToSurvive, foodToReproduce);
+            Simulation simulationVar = new Simulation(simulationTerrain, simulationDays, stepsPerDay, initialCreatures, mutations, populations, foodToSurvive, foodToReproduce);
 
             SimulationResults results = simulationVar.RunSimulation(foodPerDay, PositionType.Random);
 
-            //for (int day = 0; day < simulationDays; day++)
-            //{
-            //    for(int step = 0; step < stepsPerDay; step++)
-            //    {
-            //        Console.WriteLine($"Day {day}, step {step}:");
-
-            //        simulationTerrain.UpdateCreaturePositions(results.CreatureSteps.GetDayStep(day,step).GetPositions());
-            //        simulationTerrain.PrintTerrain();
-            //    }
-            //}
+            results.PrintToFile($"run_{DateTime.Now.ToString("yyyyMMdd.HHmmss")}");
         }
     }
 }
