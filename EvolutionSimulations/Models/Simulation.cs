@@ -50,10 +50,11 @@ namespace EvolutionSimulations
 
                 for (int step = 0; step < _stepsPerDay; step++)
                 {
-                    SimulateStep(day, step);
+                    SimulateStep(day, step, CurrentTerrain.X, CurrentTerrain.Y);
                 }
 
                 DetermineCreaturesNextStatus();
+                PrintEndOfDayCreatures(CurrentCreatures);
                 PrintCreaturesNextStatus(CurrentCreatures);
             }
 
@@ -64,17 +65,39 @@ namespace EvolutionSimulations
         {
             foreach (Creature creature in currentCreatures)
             {
-                Console.WriteLine($"Creature ID#{creature.Id} collected {creature.FoodCollectedLastDay} food. So, next day, it will {creature.NextStatus}.");
+                string phraseAboutHealth = ".";
+                string nextStatusReadable = "";
+
+                if(creature.Health <= 0.0)
+                {
+                    phraseAboutHealth = creature.FoodCollectedLastDay < FoodToSurvive? ", and it was fatally injured in a fight."
+                        : $", but unfortunately it was fatally injured in a fight.";
+                }
+
+                switch(creature.NextStatus)
+                {
+                    case LifeStatus.Die:
+                        nextStatusReadable = "die";
+                        break;
+                    case LifeStatus.Reproduce:
+                        nextStatusReadable = "reproduce and have offspring";
+                        break;
+                    case LifeStatus.StayAlive:
+                        nextStatusReadable = "stay alive";
+                        break;
+                }
+
+                Console.WriteLine($"Creature ID#{creature.Id} collected {creature.FoodCollectedLastDay} food{phraseAboutHealth} So, next day, it will {nextStatusReadable}.");
             }
             Console.WriteLine("");
         }
 
-        private void PrintTerrainStep(string message)
-        {
-            Console.WriteLine(message);
-            CurrentTerrain.PrintTerrain();
-            Console.WriteLine("");
-        }
+        //private void PrintTerrainStep(string message)
+        //{
+        //    Console.WriteLine(message);
+        //    CurrentTerrain.PrintTerrain();
+        //    Console.WriteLine("");
+        //}
 
         private void DetermineCreaturesNextStatus()
         {
@@ -83,37 +106,47 @@ namespace EvolutionSimulations
 
         private void DetermineStepActions()
         {
-            CurrentCreatures.ProcessInteractions(CurrentTerrain.CellsOutcome());
+            CurrentCreatures.CheckSurroundings(CurrentTerrain.FoodUnits);
+            CurrentCreatures.CheckInteractions(CurrentTerrain.FoodUnits);
         }
 
         private void SetupDayStart(int foodPerDay, PositionType positionType, int day)
         {
-            CurrentCreatures.Reset();
-            CurrentTerrain.ClearCreaturePositions();
-            CurrentCreatures.SetPositions(positionType);
-            CurrentTerrain.UpdateCreaturePositions(CurrentCreatures.GetPositions());
+            CurrentCreatures.ResetCreatures();
+            CurrentCreatures.SetPositions(positionType, CurrentTerrain.X, CurrentTerrain.Y);
             CurrentTerrain.ClearFood();
             CurrentTerrain.AddRandomFood(foodPerDay);
-            PrintTerrainStep($"Start of day {day}:");
-            PrintAliveCreatures(CurrentCreatures);
+            PrintStartOfDayCreatures(CurrentCreatures);
         }
 
-        private void PrintAliveCreatures(CreatureList currentCreatures)
+        private void PrintStartOfDayCreatures(CreatureList currentCreatures)
         {
             Console.WriteLine("Creatures that start this day:");
             foreach (Creature creature in currentCreatures)
             {
-                Console.WriteLine($"Creature ID#{creature.Id}");
+                Console.WriteLine($"Creature ID#{creature.Id}, Health {creature.Health} ({creature.Traits[0]})");
             }
             Console.WriteLine("");
         }
 
-        private void SimulateStep(int day, int step)
+        private void PrintEndOfDayCreatures(CreatureList currentCreatures)
         {
-            CurrentCreatures.Move();
-            CurrentTerrain.UpdateCreaturePositions(CurrentCreatures.GetPositions());
+            Console.WriteLine("Creatures at the end of this day:");
+            foreach (Creature creature in currentCreatures)
+            {
+                Console.WriteLine($"Creature ID#{creature.Id}, Health {creature.Health} ({creature.Traits[0]})");
+            }
+            Console.WriteLine("");
+        }
+
+        private void SimulateStep(int day, int step, double xLimit, double yLimit)
+        {
+            foreach (Creature creature in CurrentCreatures)
+            {
+                Console.WriteLine($"Creature ID#{creature.Id} position X:{creature.Position.X:N2}, Y:{creature.Position.Y:N2}");
+            }
+            CurrentCreatures.MoveCreatures(xLimit, yLimit);
             StoreStepResults(day, step);
-            PrintTerrainStep($"Day {day}, step {step}:");
             DetermineStepActions();
         }
 

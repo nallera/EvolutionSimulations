@@ -29,10 +29,10 @@ namespace EvolutionSimulations
             return creatures.Count;
         }
 
-        public int AddNewCreature(int xLimit, int yLimit, List<CreatureTreat> treats)
+        public int AddNewCreature(List<CreatureTrait> traits)
         {
             lastId++;
-            creatures.Add(new Creature(lastId, xLimit, yLimit, treats));
+            creatures.Add(new Creature(lastId, traits));
 
             return creatures.Count;
         }
@@ -42,29 +42,15 @@ namespace EvolutionSimulations
             creatures.RemoveAt(creatures.FindIndex(creature => creature.Id == id));
         }
 
-        internal void SetPositions(PositionType positionType)
+        internal void SetPositions(PositionType positionType, double xLimit, double yLimit)
         {
             foreach (Creature creature in creatures)
             {
-                creature.SetPosition(positionType);
+                creature.SetPosition(positionType, xLimit, yLimit);
             }
         }
 
-        public List<CreatureIdAndPosition> GetPositions()
-        {
-            List<CreatureIdAndPosition> positions = new List<CreatureIdAndPosition>();
-
-            foreach (Creature creature in creatures)
-            {
-                positions.Add(new CreatureIdAndPosition { CreatureId = creature.Id, 
-                                                          XPosition = creature.XPosition, 
-                                                          YPosition = creature.YPosition });
-            }
-
-            return positions;
-        }
-
-        internal void UpdateCreatures()
+        public void UpdateCreatures()
         {
             foreach (Creature reproducingCreature in creatures.FindAll(creature => creature.NextStatus == LifeStatus.Reproduce))
             {
@@ -77,21 +63,87 @@ namespace EvolutionSimulations
             }
         }
 
-        internal void ProcessInteractions(List<CreatureInteraction> interactions)
+        public List<CreatureIdAndPosition> GetPositions()
         {
-            foreach (var interaction in interactions)
+            List<CreatureIdAndPosition> positions = new List<CreatureIdAndPosition>();
+
+            foreach (Creature creature in creatures)
             {
-                if(interaction.FoodInvolved())
+                positions.Add(new CreatureIdAndPosition { CreatureId = creature.Id, 
+                                                            Position = new Coordinate(creature.Position) });
+            }
+
+            return positions;
+        }
+
+        //internal void ProcessInteractions(List<CreatureInteraction> interactions)
+        //{
+        //    foreach (var interaction in interactions)
+        //    {
+        //        if(interaction.FoodInvolved())
+        //        {
+        //            foreach(var id in interaction.GetIds())
+        //            {
+        //                creatures[creatures.FindIndex(creature => creature.Id == id)].FoodCollected += 1 / interaction.CreaturesCount;
+        //            }
+        //        }
+        //    }
+        //}
+
+        public void CheckSurroundings(List<Food> food)
+        {
+            ResetSurroundingsFindings();
+
+            foreach (Creature creature in creatures)
+            {
+                creature.CheckSurroundings(GetPositions(), food);
+            }
+        }
+
+        internal void CheckInteractions(List<Food> foodUnits)
+        {
+            foreach (Creature creature in creatures)
+            {
+                if (creature.FoodInReachIds.Count != 0)
                 {
-                    foreach(var id in interaction.GetIds())
+                    if (creature.CreaturesInReachIds.Count != 0)
                     {
-                        creatures[creatures.FindIndex(creature => creature.Id == id)].FoodCollected += 1 / interaction.CreaturesCount;
+                        foreach (int creatureInReachId in creature.CreaturesInReachIds)
+                        {
+                            creature.TakeDamageFromFight(creatures.Find(c => c.Id == creatureInReachId));
+                        }
+                        foreach (int foodId in creature.FoodInReachIds)
+                        {
+                            creature.FoodCollected += 1.0 / foodUnits[foodId].ReachingCreatures.Count; //SI REACHEA LA FOOD NO NECESARIAMENTE REACHEA A LA OTRA CREATURE, VER
+                        }
+                    }
+                    else
+                    {
+                        creature.FoodCollected += creature.FoodInReachIds.Count;
+                    }
+                }
+                else
+                {
+                    if (creature.CreaturesInReachIds.Count != 0)
+                    {
+                        foreach (int creatureInReachId in creature.CreaturesInReachIds)
+                        {
+                            creature.TakeDamageFromFight(creatures.Find(c => c.Id == creatureInReachId));
+                        }
                     }
                 }
             }
         }
 
-        internal void Reset()
+        public void ResetSurroundingsFindings()
+        {
+            foreach (Creature creature in creatures)
+            {
+                creature.ResetSurroundingsFindings();
+            }
+        }
+
+        internal void ResetCreatures()
         {
             foreach (Creature creature in creatures)
             {
@@ -99,11 +151,11 @@ namespace EvolutionSimulations
             }
         }
 
-        internal void Move()
+        internal void MoveCreatures(double xLimit, double yLimit)
         {
             foreach (Creature creature in creatures)
             {
-                creature.Move();
+                creature.Move(xLimit, yLimit);
             }
         }
 

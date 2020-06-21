@@ -7,40 +7,24 @@ namespace EvolutionSimulations
 {
     public class Terrain
     {
-        public int X;
-        public int Y;
-        public CellContent[][] Cells;
+        public double X;
+        public double Y;
+        public List<Food> FoodUnits;
 
         public Terrain(Terrain source)
         {
             X = source.X;
             Y = source.Y;
 
-            Cells = new CellContent[X][];
-            for (int line = 0; line < X; line++)
-            {
-                Cells[line] = new CellContent[Y];
-                for (int column = 0; column < Y; column++)
-                {
-                    Cells[line][column] = new CellContent(source.Cells[line][column]);
-                }
-            }
+            FoodUnits = new List<Food>(source.FoodUnits);
         }
 
-        public Terrain(int x, int y)
+        public Terrain(double x, double y)
         {
             X = x;
             Y = y;
 
-            Cells = new CellContent[X][];
-            for(int line = 0; line < X; line++)
-            {
-                Cells[line] = new CellContent[Y];
-                for (int column = 0; column < Y; column++)
-                {
-                    Cells[line][column] = new CellContent();
-                }
-            }
+            FoodUnits = new List<Food>();
         }
 
         public void AddRandomFood(int foodAmount)
@@ -50,96 +34,83 @@ namespace EvolutionSimulations
 
             while (placedFoodCount < foodAmount)
             {
-                int xFood = randomGen.Next(X);
-                int yFood = randomGen.Next(Y);
+                double xFood = randomGen.NextDouble() * X;
+                double yFood = randomGen.NextDouble() * Y;
 
-                if (!Cells[xFood][yFood].HasFood())
-                {
-                    Cells[xFood][yFood].AddFood();
-                    placedFoodCount++;
-                }
+                FoodUnits.Add(new Food(xFood,yFood));
+                placedFoodCount++;
             }
         }
 
         internal void ClearFood()
         {
-            foreach (var line in Cells)
-            {
-                foreach (var column in line)
-                {
-                    if (column.HasFood())
-                    {
-                        column.ClearFood();
-                    }
-                }
-                Console.Write("\n");
-            }
+            FoodUnits.Clear();
         }
 
-        public void PrintTerrain()
-        {
-            foreach (var line in Cells)
-            {
-                foreach(var column in line)
-                {
-                    if (column.HasFood())
-                    {
-                        if(column.CreatureCount > 0)
-                        {
-                            Console.Write("X"); 
-                        }
-                        else
-                        {
-                            Console.Write("F");
-                        }
-                    }
-                    else
-                    {
-                        Console.Write(column.CreatureCount);
-                    }
-                }
-                Console.Write("\n");
-            }
-        }
+        //public void PrintTerrain()
+        //{
+        //    foreach (var line in Cells)
+        //    {
+        //        foreach(var column in line)
+        //        {
+        //            if (column.HasFood())
+        //            {
+        //                if(column.CreatureCount > 0)
+        //                {
+        //                    Console.Write("X"); 
+        //                }
+        //                else
+        //                {
+        //                    Console.Write("F");
+        //                }
+        //            }
+        //            else
+        //            {
+        //                Console.Write(column.CreatureCount);
+        //            }
+        //        }
+        //        Console.Write("\n");
+        //    }
+        //}
 
-        public void UpdateCreaturePositions(List<CreatureIdAndPosition> creaturePositions)
-        {
-            ClearCreaturePositions();
+        //public void UpdateCreaturePositions(List<CreatureIdAndPosition> creaturePositions)
+        //{
+        //    ClearCreaturePositions();
 
-            foreach (var position in creaturePositions)
-            {
-                Cells[position.XPosition][position.YPosition].AddCreature(position.CreatureId);
-            }
-        }
+        //    foreach (var position in creaturePositions)
+        //    {
+        //        Cells[position.XPosition][position.YPosition].AddCreature(position.CreatureId);
+        //    }
+        //}
 
-        public void ClearCreaturePositions()
-        {
-            foreach (var line in Cells)
-            {
-                foreach (var cell in line)
-                {
-                    cell.ClearCreatures();
-                }
-            }
-        }
+        //public void ClearCreaturePositions()
+        //{
+        //    foreach (var line in Cells)
+        //    {
+        //        foreach (var cell in line)
+        //        {
+        //            cell.ClearCreatures();
+        //        }
+        //    }
+        //}
 
-        public List<CreatureInteraction> CellsOutcome()
-        {
-            List<CreatureInteraction> interactions = new List<CreatureInteraction>();
+        //public List<CreatureInteraction> CellsOutcome()
+        //{
+        //    List<CreatureInteraction> interactions = new List<CreatureInteraction>();
 
-            foreach(var line in Cells)
-            {
-                foreach(var cell in line)
-                {
-                    if((cell.CreatureCount > 0 && cell.HasFood()) || (cell.CreatureCount > 1))
-                    {
-                        interactions.Add(new CreatureInteraction(cell.GetCreatures(), cell.HasFood()));
-                        cell.ClearFood();
-                    }
-                }
-            }
+        //    foreach(var line in Cells)
+        //    {
+        //        foreach(var cell in line)
+        //        {
+        //            if((cell.CreatureCount > 0 && cell.HasFood()) || (cell.CreatureCount > 1))
+        //            {
+        //                interactions.Add(new CreatureInteraction(cell.GetCreatures(), cell.HasFood()));
+        //                cell.ClearFood();
+        //            }
+        //        }
+        //    }
 
-            return interactions;
-        }
+        //    return interactions;
+        //}
     }
 }

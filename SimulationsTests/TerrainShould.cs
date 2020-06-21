@@ -15,19 +15,7 @@ namespace SimulationsTests
             Terrain sut = new Terrain(x, y);
             sut.AddRandomFood(foodAmount);
 
-            int count = 0;
-            foreach (var line in sut.Cells)
-            {
-                foreach (var column in line)
-                {
-                    if (column.HasFood())
-                    {
-                        count++;
-                    }
-                }
-            }
-
-            Assert.Equal(foodAmount, count);
+            Assert.Equal(foodAmount, sut.FoodUnits.Count);
         }
     }
 }

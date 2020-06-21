@@ -9,22 +9,22 @@ namespace EvolutionSimulations
         static void Main(string[] args)
         {
             int xLimit = 5;
-            int yLimit = 15;
+            int yLimit = 5;
 
             Terrain simulationTerrain = new Terrain(xLimit, yLimit);
 
             int simulationDays = 5;
             int stepsPerDay = 4;
-            int foodPerDay = 20;
+            int foodPerDay = 3;
             int foodToSurvive = 1;
             int foodToReproduce = 2;
             CreatureList initialCreatures = new CreatureList();
             List<Mutation> mutations = new List<Mutation>();
 
-            initialCreatures.AddNewCreature(xLimit, yLimit, new List<CreatureTreat> { CreatureTreat.Friendly });
-            initialCreatures.AddNewCreature(xLimit, yLimit, new List<CreatureTreat> { CreatureTreat.Friendly });
-            initialCreatures.AddNewCreature(xLimit, yLimit, new List<CreatureTreat> { CreatureTreat.Friendly });
-            initialCreatures.AddNewCreature(xLimit, yLimit, new List<CreatureTreat> { CreatureTreat.Friendly });
+            initialCreatures.AddNewCreature(new List<CreatureTrait> { CreatureTrait.Friendly });
+            initialCreatures.AddNewCreature(new List<CreatureTrait> { CreatureTrait.Hostile });
+            initialCreatures.AddNewCreature(new List<CreatureTrait> { CreatureTrait.Friendly });
+            initialCreatures.AddNewCreature(new List<CreatureTrait> { CreatureTrait.Friendly });
 
             Simulation simulationVar = new Simulation(simulationTerrain, simulationDays, stepsPerDay, initialCreatures, mutations, foodToSurvive, foodToReproduce);
 

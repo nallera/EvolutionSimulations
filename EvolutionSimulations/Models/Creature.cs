@@ -6,20 +6,24 @@ namespace EvolutionSimulations
 {
     public class Creature
     {
-        private Random _positionRandomGen;
-        private Random _movementRandomGen;
-        private readonly int _xLimit;
-        private readonly int _yLimit;
+        public int Id;
+
+        private Random _randomGen;
+
         public int Health;
         public int AttackPower;
-        public List<CreatureTreat> Treats { get; set; }
+        public double MaxSpeed;
+        public double Reach;
+        public List<CreatureTrait> Traits { get; set; }
+
         public double FoodCollected;
         public double FoodCollectedLastDay;
         public LifeStatus NextStatus;
 
-        public int XPosition;
-        public int YPosition;
-        public int Id;
+        public Coordinate Position;
+
+        public List<int> FoodInReachIds;
+        public List<int> CreaturesInReachIds;
 
         public Creature(Creature source)
         {
@@ -27,88 +31,85 @@ namespace EvolutionSimulations
 
             Health = source.Health;
             AttackPower = source.AttackPower;
-            Treats = source.Treats;
+            MaxSpeed = source.MaxSpeed;
+            Reach = source.Reach;
+            Traits = new List<CreatureTrait>(source.Traits);
 
             FoodCollected = 0;
             FoodCollectedLastDay = 0;
             NextStatus = LifeStatus.StayAlive;
 
-            _xLimit = source._xLimit;
-            _yLimit = source._yLimit;
-            _positionRandomGen = new Random(Guid.NewGuid().GetHashCode());
-            _movementRandomGen = new Random(Guid.NewGuid().GetHashCode());
+            _randomGen = new Random(Guid.NewGuid().GetHashCode());
 
-            XPosition = source.XPosition;
-            YPosition = source.YPosition;
+            Position = new Coordinate(source.Position);
+
+            FoodInReachIds = new List<int>(source.FoodInReachIds);
+            CreaturesInReachIds = new List<int>(source.CreaturesInReachIds);
         }
 
-        public Creature(int id, int xLimit, int yLimit, List<CreatureTreat> treats)
+        public Creature(int id, List<CreatureTrait> traits)
         {
             Id = id;
 
             Health = 100;
             AttackPower = 10;
-            Treats = treats;
+            MaxSpeed = 1.0;
+            Reach = 1.0;
+            Traits = new List<CreatureTrait>(traits);
 
             FoodCollected = 0;
             FoodCollectedLastDay = 0;
             NextStatus = LifeStatus.StayAlive;
 
-            _xLimit = xLimit;
-            _yLimit = yLimit;
-            _positionRandomGen = new Random(Guid.NewGuid().GetHashCode());
-            _movementRandomGen = new Random(Guid.NewGuid().GetHashCode());
+            _randomGen = new Random(Guid.NewGuid().GetHashCode());
 
-            XPosition = 0;
-            YPosition = 0;
+            Position = new Coordinate(0.0, 0.0);
+
+            FoodInReachIds = new List<int>();
+            CreaturesInReachIds = new List<int>();
         }
 
-        public void Move()
+        public void Move(double xLimit, double yLimit)
         {
-            XPosition += GenerateMove(XPosition,_xLimit);
-            YPosition += GenerateMove(YPosition,_yLimit);
+            double angle, speed, newXPosition = 0.0, newYPosition = 0.0;
+            bool outOfLimits = true;
+
+            while (outOfLimits)
+            {
+                angle = _randomGen.NextDouble() * 2 * Math.PI;
+                speed = _randomGen.NextDouble() * MaxSpeed;
+
+                newXPosition = Position.X + Math.Cos(angle) * speed;
+                newYPosition = Position.Y + Math.Cos(angle) * speed;
+
+                outOfLimits = (newXPosition < 0.0 || newXPosition > xLimit || newYPosition < 0.0 || newYPosition > yLimit) ? true : false;
+            }
+
+            Position.X = newXPosition;
+            Position.Y = newYPosition;
         }
 
-        private int GenerateMove(int actualPosition, int limit)
-        {
-            int Move;
-            if (actualPosition == limit - 1)
-            {
-                Move = _movementRandomGen.Next(2) - 1;
-            }
-            else if (actualPosition == 0)
-            {
-                Move = _movementRandomGen.Next(2);
-            }
-            else
-            {
-                Move = _movementRandomGen.Next(3) - 1;
-            }
-
-            return Move;
-        }
-
-        internal void SetPosition(PositionType positionType)
+        internal void SetPosition(PositionType positionType, double xLimit, double yLimit)
         {
             switch(positionType)
             {
                 case PositionType.Random:
 
-                    XPosition = _positionRandomGen.Next(_xLimit);
-                    YPosition = _positionRandomGen.Next(_yLimit);
+                    Position.X = _randomGen.NextDouble() * xLimit;
+                    Position.Y = _randomGen.NextDouble() * yLimit;
                     break;
 
                 case PositionType.Border:
 
-                    switch (_positionRandomGen.Next(2))
+                    switch (_randomGen.Next(2))
                     {
                         case 0:
-                            XPosition = (_xLimit - 1) * Convert.ToInt32(_positionRandomGen.Next(2));
-                            YPosition = _positionRandomGen.Next(_yLimit);
+                            Position.X = 1.0 + _randomGen.Next(2) * (xLimit - 2.0);
+                            Position.Y = _randomGen.NextDouble() * yLimit;
                             break;
                         case 1:
-                            XPosition = _positionRandomGen.Next(_xLimit);
-                            YPosition =  (_yLimit - 1) * Convert.ToInt32(_positionRandomGen.Next(2));
+                            Position.X = _randomGen.NextDouble() + xLimit;
+                            Position.Y = 1.0 + _randomGen.Next(2) * (yLimit - 2.0);
                             break;
                     }
                     break;
@@ -117,27 +118,87 @@ namespace EvolutionSimulations
 
         public void DetermineNextStatusAndClearFood(int foodToSurvive, int foodToReproduce)
         {
-            switch (FoodCollected)
+            if (Health <= 0.0) NextStatus = LifeStatus.Die;
+            else
             {
-                case var d when d < foodToSurvive:
-                    NextStatus = LifeStatus.Die;
-                    break;
-                case var d when d >= foodToSurvive && d < foodToReproduce:
-                    NextStatus = LifeStatus.StayAlive;
-                    break;
-                case var d when d >= foodToReproduce:
-                    NextStatus = LifeStatus.Reproduce;
-                    break;
+                switch (FoodCollected)
+                {
+                    case var d when d < foodToSurvive:
+                        NextStatus = LifeStatus.Die;
+                        break;
+                    case var d when d >= foodToSurvive && d < foodToReproduce:
+                        NextStatus = LifeStatus.StayAlive;
+                        break;
+                    case var d when d >= foodToReproduce:
+                        NextStatus = LifeStatus.Reproduce;
+                        break;
+                }
             }
 
             FoodCollectedLastDay = FoodCollected;
             FoodCollected = 0;
         }
 
+        internal void TakeDamageFromFight(Creature creature)
+        {
+            if (Traits.Contains(CreatureTrait.Friendly))
+            {
+                if (creature.Traits.Contains(CreatureTrait.Hostile)) Health -= 50;
+            }
+            else if (Traits.Contains(CreatureTrait.Hostile))
+            {
+                if (creature.Traits.Contains(CreatureTrait.Hostile)) Health -= 25;
+            }
+        }
+
+        internal void CheckSurroundings(List<CreatureIdAndPosition> creatures, List<Food> food)
+        {
+            FoodInReachIds = CheckFoodInReach(food);
+            CreaturesInReachIds = CheckCreaturesInReach(creatures);
+        }
+
+        internal void ResetSurroundingsFindings()
+        {
+            FoodInReachIds.Clear();
+            CreaturesInReachIds.Clear();
+        }
+
+        public List<int> CheckCreaturesInReach(List<CreatureIdAndPosition> creatures)
+        {
+            List<int> creaturesInReach = new List<int>();
+
+            foreach (CreatureIdAndPosition creature in creatures)
+            {
+                if (creature.CreatureId != Id && Position.InReach(creature.Position, Reach)) creaturesInReach.Add(creature.CreatureId);
+            }
+
+            return creaturesInReach;
+        }
+
+        public List<int> CheckFoodInReach(List<Food> food)
+        {
+            List<int> foodInReach = new List<int>();
+
+            for(int index = 0; index < food.Count; index++)
+            {
+                if (Position.InReach(food[index].Position, Reach))
+                {
+                    foodInReach.Add(index);
+                    food[index].ReachingCreatures.Add(Id);
+                }
+            }
+
+            return foodInReach;
+        }
+
+        
+
         internal void Reset()
         {
             Health = 100;
             AttackPower = 10;
+            MaxSpeed = 1.0;
+            Reach = 1.0;
         }
     }
 }

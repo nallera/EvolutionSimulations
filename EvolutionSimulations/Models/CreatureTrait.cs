@@ -1,6 +1,6 @@
 ﻿namespace EvolutionSimulations
 {
-    public enum CreatureTreat
+    public enum CreatureTrait
     {
         Friendly,
         Hostile
