@@ -10,7 +10,6 @@ namespace EvolutionSimulations
     {
         private int _simulationDays;
         private int _stepsPerDay;
-        private CreatureList _initialCreatures;
         private List<Mutation> _mutations;
 
         public Terrain CurrentTerrain;
@@ -23,17 +22,18 @@ namespace EvolutionSimulations
         public int FoodToSurvive;
         public int FoodToReproduce;
 
-        public Simulation(Terrain simulationTerrain, int simulationDays, int stepsPerDay, CreatureList initialCreatures, List<Mutation> mutations, Population populations, int foodToSurvive, int foodToReproduce)
+        public Simulation(Terrain simulationTerrain, int simulationDays, int stepsPerDay, CreatureList creatures, List<Mutation> mutations, Population populations, int foodToSurvive, int foodToReproduce)
         {
             CurrentTerrain = simulationTerrain;
-            CurrentCreatures = new CreatureList(_initialCreatures);
-            CurrentPopulation = new Population(populations);
+            
             _simulationDays = simulationDays;
             _stepsPerDay = stepsPerDay;
-            _initialCreatures = initialCreatures;
             _mutations = mutations;
             FoodToSurvive = foodToSurvive;
             FoodToReproduce = foodToReproduce;
+
+            CurrentCreatures = creatures;
+            CurrentPopulation = new Population(populations);
 
             CreatureResults = new DayStepResult<CreatureList>();
             TerrainResults = new DayStepResult<Terrain>();
@@ -58,7 +58,7 @@ namespace EvolutionSimulations
                 }
 
                 DetermineCreaturesNextStatus();
-                PrintEndOfDayCreatures(CurrentCreatures, day);
+                PrintCreatures(CurrentCreatures, day, false);
                 PrintCreaturesNextStatus(CurrentCreatures);
             }
 
@@ -121,13 +121,13 @@ namespace EvolutionSimulations
             CurrentCreatures.SetPositions(positionType, CurrentTerrain.X, CurrentTerrain.Y);
             CurrentTerrain.ClearFood();
             CurrentTerrain.AddRandomFood(foodPerDay);
-            PrintStartOfDayCreatures(CurrentCreatures, day);
-            CurrentPopulation.Update(CurrentCreatures);
+            PrintCreatures(CurrentCreatures, day, true);
+            PrintPopulations(day, true);
         }
 
-        private void PrintStartOfDayCreatures(CreatureList currentCreatures, int day)
+        private void PrintCreatures(CreatureList currentCreatures, int day, bool beginningOfDay)
         {
-            Console.WriteLine($"Creatures that start day {day}:");
+            Console.WriteLine($"Creatures {(beginningOfDay ? "that start" : "at the end of")} day {day}:");
             foreach (Creature creature in currentCreatures)
             {
                 Console.WriteLine($"Creature ID#{creature.Id}, Health {creature.Health} ({creature.Traits[0]})");
@@ -135,15 +135,13 @@ namespace EvolutionSimulations
             Console.WriteLine("");
         }
 
-        private void PrintEndOfDayCreatures(CreatureList currentCreatures, int day)
+        public void PrintPopulations(int day, bool beginningOfDay)
         {
-            Console.WriteLine("");
-            Console.WriteLine($"Creatures at the end of day {day}:");
-            foreach (Creature creature in currentCreatures)
+            Console.WriteLine($"Population at the {(beginningOfDay ? "start" : "end")} of day {day}:");
+            foreach (CreatureType creatureType in CurrentPopulation.CreatureTypes)
             {
-                Console.WriteLine($"Creature ID#{creature.Id}, Health {creature.Health} ({creature.Traits[0]})");
+                Console.WriteLine($"Number of creatures: {creatureType.NumberOfCreatures}");
             }
-            Console.WriteLine("");
         }
 
         private void SimulateStep(int day, int step, double xLimit, double yLimit)

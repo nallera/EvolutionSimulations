@@ -18,23 +18,26 @@ namespace EvolutionSimulations
             int foodPerDay = 100;
             int foodToSurvive = 1;
             int foodToReproduce = 2;
-            CreatureList initialCreatures = new CreatureList();
+            CreatureList creatures = new CreatureList();
             List<Mutation> mutations = new List<Mutation>();
-            Population populations = new Population(new List<PopulationType>
+            Population populations = new Population(new List<CreatureType>
             {
-                new PopulationType { CreatureTrait.Friendly }, 
-                new PopulationType { CreatureTrait.Hostile },
-                new PopulationType { CreatureTrait.Friendly, CreatureTrait.Hostile },
+                new CreatureType { CreatureTrait.Friendly }, 
+                new CreatureType { CreatureTrait.Hostile },
+                new CreatureType { CreatureTrait.Friendly, CreatureTrait.Hostile },
             });
 
-            initialCreatures.AddNewCreature(populations.PopulationTypes[0]);
-            initialCreatures.AddNewCreature(populations.PopulationTypes[1]);
-            initialCreatures.AddNewCreature(populations.PopulationTypes[0]);
-            initialCreatures.AddNewCreature(populations.PopulationTypes[0]);
-            initialCreatures.AddNewCreature(populations.PopulationTypes[1]);
-            initialCreatures.AddNewCreature(populations.PopulationTypes[1]);
+            creatures.CreatureAdded += populations.creatures_CreatureAdded;
+            creatures.CreatureRemoved += populations.creatures_CreatureRemoved;
 
-            Simulation simulationVar = new Simulation(simulationTerrain, simulationDays, stepsPerDay, initialCreatures, mutations, populations, foodToSurvive, foodToReproduce);
+            creatures.AddNewCreature(populations[0]);
+            creatures.AddNewCreature(populations[1]);
+            creatures.AddNewCreature(populations[0]);
+            creatures.AddNewCreature(populations[0]);
+            creatures.AddNewCreature(populations[1]);
+            creatures.AddNewCreature(populations[1]);
+
+            Simulation simulationVar = new Simulation(simulationTerrain, simulationDays, stepsPerDay, creatures, mutations, populations, foodToSurvive, foodToReproduce);
 
             SimulationResults results = simulationVar.RunSimulation(foodPerDay, PositionType.Random);
 

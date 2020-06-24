@@ -3,18 +3,21 @@ using System.Collections.Generic;
 
 namespace EvolutionSimulations
 {
-    public class PopulationType : IEnumerable<CreatureTrait>
+    public class CreatureType : IEnumerable<CreatureTrait>
     {
         public List<CreatureTrait> Traits { get; set; }
+        public int NumberOfCreatures { get; set; }
 
-        public PopulationType()
+        public CreatureType()
         {
             Traits = new List<CreatureTrait>();
+            NumberOfCreatures = 0;
         }
 
-        public PopulationType(PopulationType source)
+        public CreatureType(CreatureType source)
         {
             Traits = new List<CreatureTrait>(source.Traits);
+            NumberOfCreatures = source.NumberOfCreatures;
         }
 
         public void Add(CreatureTrait trait)

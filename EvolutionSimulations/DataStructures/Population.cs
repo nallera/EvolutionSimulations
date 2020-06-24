@@ -1,28 +1,60 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EvolutionSimulations
 {
-    public class Population
+    public class Population: IEnumerable<CreatureType>
     {
-        public List<PopulationType> PopulationTypes { get; set; }
+        public List<CreatureType> CreatureTypes { get; set; }
 
-        public Population(List<PopulationType> populationTypes)
+        public Population()
         {
-            PopulationTypes = new List<PopulationType>(populationTypes);
+            CreatureTypes = new List<CreatureType>();
+        }
+        public Population(List<CreatureType> creatureTypes)
+        {
+            CreatureTypes = new List<CreatureType>(creatureTypes);
         }
 
         public Population(Population source)
         {
-            PopulationTypes = new List<PopulationType>(source.PopulationTypes);
+            CreatureTypes = new List<CreatureType>(source.CreatureTypes);
         }
 
-        internal void Update(CreatureList currentCreatures)
+        public CreatureType this[int index]
         {
-            foreach (Creature creature in currentCreatures)
+            get
             {
-                //PopulationTypes.FindIndex(pop => pop.Traits.Contains(creature.Traits));
+                return CreatureTypes[index];
             }
+            set
+            {
+                CreatureTypes[index] = value;
+            }
+        }
+
+        public void creatures_CreatureAdded(object sender, CreatureTraitsEventArgs e)
+        {
+            int index = CreatureTypes.FindIndex(creatureType => creatureType.Traits.SequenceEqual(e.Traits));
+            CreatureTypes[index].NumberOfCreatures++;
+        }
+
+        public void creatures_CreatureRemoved(object sender, CreatureTraitsEventArgs e)
+        {
+            int index = CreatureTypes.FindIndex(creatureType => creatureType.Traits.SequenceEqual(e.Traits));
+            CreatureTypes[index].NumberOfCreatures--;
+        }
+
+        public IEnumerator<CreatureType> GetEnumerator()
+        {
+            return CreatureTypes.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
         }
     }
 }

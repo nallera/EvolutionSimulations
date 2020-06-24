@@ -21,24 +21,27 @@ namespace EvolutionSimulations
             creatures = new List<Creature>();
             lastId = -1;
         }
-
+        
         public int AddCopyCreature(Creature sourceCreature)
         {
             lastId++;
+            OnCreatureAdded(new CreatureTraitsEventArgs { Traits = sourceCreature.Traits});
             creatures.Add(new Creature(sourceCreature) { Id = lastId});
             return creatures.Count;
         }
 
-        public int AddNewCreature(PopulationType populationType)
+        public int AddNewCreature(CreatureType creatureType)
         {
             lastId++;
-            creatures.Add(new Creature(lastId, populationType.Traits));
+            OnCreatureAdded(new CreatureTraitsEventArgs { Traits = creatureType.Traits });
+            creatures.Add(new Creature(lastId, creatureType.Traits));
 
             return creatures.Count;
         }
 
         public void RemoveCreature(int id)
         {
+            OnCreatureRemoved(new CreatureTraitsEventArgs { Traits = creatures.Find(creature => creature.Id == id).Traits });
             creatures.RemoveAt(creatures.FindIndex(creature => creature.Id == id));
         }
 
@@ -169,5 +172,19 @@ namespace EvolutionSimulations
         {
             return this.GetEnumerator();
         }
+
+        protected virtual void OnCreatureAdded(CreatureTraitsEventArgs e)
+        {
+            EventHandler<CreatureTraitsEventArgs> handler = CreatureAdded;
+            handler?.Invoke(this, e);
+        }
+        protected virtual void OnCreatureRemoved(CreatureTraitsEventArgs e)
+        {
+            EventHandler<CreatureTraitsEventArgs> handler = CreatureRemoved;
+            handler?.Invoke(this, e);
+        }
+
+        public event EventHandler<CreatureTraitsEventArgs> CreatureAdded;
+        public event EventHandler<CreatureTraitsEventArgs> CreatureRemoved;
     }
 }
