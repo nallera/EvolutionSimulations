@@ -1,4 +1,5 @@
-EvolutionSimulations\bin
-EvolutionSimulations\obj
-SimulationsTests\bin
-SimulationsTests\obj
+*/EvolutionSimulations/bin
+*/EvolutionSimulations/obj
+*/SimulationsTests/bin
+*/SimulationsTests/obj
+*/logs
