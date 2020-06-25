@@ -10,9 +10,9 @@ namespace EvolutionSimulations
     {
         public DayStepResult<CreatureList> CreatureSteps;
         public DayStepResult<Terrain> TerrainSteps;
-        public DayStepResult<Population> PopulationSteps;
+        public DayStepResult<List<int>> PopulationSteps;
 
-        public SimulationResults(DayStepResult<CreatureList> creatureResults, DayStepResult<Terrain> terrainResults, DayStepResult<Population> populationResults)
+        public SimulationResults(DayStepResult<CreatureList> creatureResults, DayStepResult<Terrain> terrainResults, DayStepResult<List<int>> populationResults)
         {
             CreatureSteps = creatureResults;
             TerrainSteps = terrainResults;
@@ -31,7 +31,7 @@ namespace EvolutionSimulations
 
             using (StreamWriter file = File.CreateText(Directory.GetCurrentDirectory() + @"\logs\" + fileName + @"\terrain.json"))
             {
-                string jsonString = JsonConvert.SerializeObject(CreatureSteps, Formatting.Indented);
+                string jsonString = JsonConvert.SerializeObject(TerrainSteps, Formatting.Indented);
                 file.Write(jsonString);
             }
 

@@ -17,7 +17,7 @@ namespace EvolutionSimulations
         public Population CurrentPopulation;
         public DayStepResult<CreatureList> CreatureResults;
         public DayStepResult<Terrain> TerrainResults;
-        public DayStepResult<Population> PopulationResults;
+        public DayStepResult<List<int>> PopulationResults;
 
         public int FoodToSurvive;
         public int FoodToReproduce;
@@ -37,7 +37,7 @@ namespace EvolutionSimulations
 
             CreatureResults = new DayStepResult<CreatureList>();
             TerrainResults = new DayStepResult<Terrain>();
-            PopulationResults = new DayStepResult<Population>();
+            PopulationResults = new DayStepResult<List<int>>();
         }
 
         public SimulationResults RunSimulation(int foodPerDay, PositionType positionType)
@@ -54,8 +54,10 @@ namespace EvolutionSimulations
 
                 for (int step = 0; step < _stepsPerDay; step++)
                 {
-                    SimulateStep(day, step, CurrentTerrain.X, CurrentTerrain.Y);
+                    SimulateStep(day, CurrentTerrain.X, CurrentTerrain.Y);
                 }
+
+                StorePopulation(day);
 
                 DetermineCreaturesNextStatus();
                 PrintCreatures(CurrentCreatures, day, false);
@@ -63,6 +65,16 @@ namespace EvolutionSimulations
             }
 
             return new SimulationResults(CreatureResults, TerrainResults, PopulationResults);
+        }
+
+        private void StorePopulation(int day)
+        {
+            var population = new List<int>();
+            foreach (CreatureType creatureType in CurrentPopulation.CreatureTypes)
+            {
+                population.Add(creatureType.NumberOfCreatures);
+            }
+            PopulationResults.AddStep(population, day);
         }
 
         private void PrintCreaturesNextStatus(CreatureList currentCreatures)
@@ -144,7 +156,7 @@ namespace EvolutionSimulations
             }
         }
 
-        private void SimulateStep(int day, int step, double xLimit, double yLimit)
+        private void SimulateStep(int day, double xLimit, double yLimit)
         {
             foreach (Creature creature in CurrentCreatures)
             {
@@ -159,7 +171,6 @@ namespace EvolutionSimulations
         {
             CreatureResults.AddStep(new CreatureList(CurrentCreatures), day);
             TerrainResults.AddStep(new Terrain(CurrentTerrain), day);
-            PopulationResults.AddStep(new Population(CurrentPopulation), day);
         }
     }
 }

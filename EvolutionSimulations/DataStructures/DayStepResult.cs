@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using EvolutionSimulations.Extension;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -7,30 +8,30 @@ namespace EvolutionSimulations
 {
     public class DayStepResult<T>
     {
-        public List<List<T>> data;
+        public List<List<T>> results;
 
         public DayStepResult()
         {
-            data = new List<List<T>>();
+            results = new List<List<T>>();
         }
 
         public void AddStep(T stepData, int day)
         {
-            if (day >= data.Count)
+            if (day >= results.Count)
             {
-                data.Add(new List<T>());
+                results.Add(new List<T>());
             }
-            data[day].Add(stepData);
+            results[day].Add(stepData);
         }
 
         public T GetDayStep(int day, int step)
         {
-            return data[day][step];
+            return results[day][step];
         }
 
         public List<T> GetDay(int day)
         {
-            return data[day];
+            return results[day];
         }
     }
 }

@@ -13,9 +13,9 @@ namespace EvolutionSimulations
 
             Terrain simulationTerrain = new Terrain(xLimit, yLimit);
 
-            int simulationDays = 5;
-            int stepsPerDay = 4;
-            int foodPerDay = 100;
+            int simulationDays = 10;
+            int stepsPerDay = 10;
+            int foodPerDay = 70;
             int foodToSurvive = 1;
             int foodToReproduce = 2;
             CreatureList creatures = new CreatureList();
