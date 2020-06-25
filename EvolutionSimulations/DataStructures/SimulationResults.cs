@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using EvolutionSimulations.DTOs;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,11 +9,11 @@ namespace EvolutionSimulations
 {
     internal class SimulationResults
     {
-        public DayStepResult<CreatureList> CreatureSteps;
+        public DayStepResult<CreatureListDTO> CreatureSteps;
         public DayStepResult<Terrain> TerrainSteps;
         public DayStepResult<List<int>> PopulationSteps;
 
-        public SimulationResults(DayStepResult<CreatureList> creatureResults, DayStepResult<Terrain> terrainResults, DayStepResult<List<int>> populationResults)
+        public SimulationResults(DayStepResult<CreatureListDTO> creatureResults, DayStepResult<Terrain> terrainResults, DayStepResult<List<int>> populationResults)
         {
             CreatureSteps = creatureResults;
             TerrainSteps = terrainResults;

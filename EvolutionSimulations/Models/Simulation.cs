@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EvolutionSimulations.DTOs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection.Metadata;
@@ -15,7 +16,7 @@ namespace EvolutionSimulations
         public Terrain CurrentTerrain;
         public CreatureList CurrentCreatures;
         public Population CurrentPopulation;
-        public DayStepResult<CreatureList> CreatureResults;
+        public DayStepResult<CreatureListDTO> CreatureResults;
         public DayStepResult<Terrain> TerrainResults;
         public DayStepResult<List<int>> PopulationResults;
 
@@ -35,7 +36,7 @@ namespace EvolutionSimulations
             CurrentCreatures = creatures;
             CurrentPopulation = new Population(populations);
 
-            CreatureResults = new DayStepResult<CreatureList>();
+            CreatureResults = new DayStepResult<CreatureListDTO>();
             TerrainResults = new DayStepResult<Terrain>();
             PopulationResults = new DayStepResult<List<int>>();
         }
@@ -169,7 +170,7 @@ namespace EvolutionSimulations
 
         private void StoreStepResults(int day)
         {
-            CreatureResults.AddStep(new CreatureList(CurrentCreatures), day);
+            CreatureResults.AddStep(new CreatureListDTO(CurrentCreatures), day);
             TerrainResults.AddStep(new Terrain(CurrentTerrain), day);
         }
     }
