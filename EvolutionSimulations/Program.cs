@@ -13,9 +13,9 @@ namespace EvolutionSimulations
 
             Terrain simulationTerrain = new Terrain(xLimit, yLimit);
 
-            int simulationDays = 10;
-            int stepsPerDay = 10;
-            int foodPerDay = 70;
+            int simulationDays = 50;
+            int stepsPerDay = 20;
+            int foodPerDay = 120;
             int foodToSurvive = 1;
             int foodToReproduce = 2;
             CreatureList creatures = new CreatureList();
@@ -39,9 +39,9 @@ namespace EvolutionSimulations
 
             Simulation simulationVar = new Simulation(simulationTerrain, simulationDays, stepsPerDay, creatures, mutations, populations, foodToSurvive, foodToReproduce);
 
-            SimulationResults results = simulationVar.RunSimulation(foodPerDay, PositionType.Random);
+            SimulationResults results = simulationVar.RunSimulation(foodPerDay, PositionType.Border);
 
-            results.PrintToFile($"run_{DateTime.Now.ToString("yyyyMMdd.HHmmss")}");
+            results.PrintToFile();
         }
     }
 }

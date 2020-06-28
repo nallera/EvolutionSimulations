@@ -20,25 +20,24 @@ namespace EvolutionSimulations
             PopulationSteps = populationResults;
         }
 
-        internal void PrintToFile(string fileName)
+        internal void PrintToFile()
         {
             if (!Directory.Exists(Directory.GetCurrentDirectory() + @"\logs")) Directory.CreateDirectory((Directory.GetCurrentDirectory() + @"\logs"));
-            if (!Directory.Exists(Directory.GetCurrentDirectory() + @"\logs\" + fileName)) Directory.CreateDirectory((Directory.GetCurrentDirectory() + @"\logs\" + fileName));
-            using (StreamWriter file = File.CreateText(Directory.GetCurrentDirectory() + @"\logs\" + fileName + @"\creatures.json"))
+            using (StreamWriter file = File.CreateText(Directory.GetCurrentDirectory() + @"\logs\creatures.json"))
             {
-                string jsonString = JsonConvert.SerializeObject(CreatureSteps, Formatting.Indented);
+                string jsonString = JsonConvert.SerializeObject(CreatureSteps);
                 file.Write(jsonString);
             }
 
-            using (StreamWriter file = File.CreateText(Directory.GetCurrentDirectory() + @"\logs\" + fileName + @"\terrain.json"))
+            using (StreamWriter file = File.CreateText(Directory.GetCurrentDirectory() + @"\logs\terrain.json"))
             {
-                string jsonString = JsonConvert.SerializeObject(TerrainSteps, Formatting.Indented);
+                string jsonString = JsonConvert.SerializeObject(TerrainSteps);
                 file.Write(jsonString);
             }
 
-            using (StreamWriter file = File.CreateText(Directory.GetCurrentDirectory() + @"\logs\" + fileName + @"\population.json"))
+            using (StreamWriter file = File.CreateText(Directory.GetCurrentDirectory() + @"\logs\population.json"))
             {
-                string jsonString = JsonConvert.SerializeObject(PopulationSteps, Formatting.Indented);
+                string jsonString = JsonConvert.SerializeObject(PopulationSteps);
                 file.Write(jsonString);
             }
         }

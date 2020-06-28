@@ -2,7 +2,7 @@
 
 namespace EvolutionSimulations.DTOs
 {
-    internal class CreatureDTO
+    public class CreatureDTO
     {
         public int Id;
         public double Health;

@@ -4,17 +4,19 @@ using System.Text;
 
 namespace EvolutionSimulations.DTOs
 {
-    class CreatureListDTO
+    public class CreatureListDTO
     {
-        private List<Creature> creatures;
+        public List<CreatureDTO> creatures;
 
         public CreatureListDTO()
         {
-            creatures = new List<Creature>();
+            creatures = new List<CreatureDTO>();
         }
 
         public CreatureListDTO(CreatureList source)
         {
+            creatures = new List<CreatureDTO>();
+
             foreach (Creature creature in source)
             {
                 creatures.Add(new CreatureDTO(creature));
