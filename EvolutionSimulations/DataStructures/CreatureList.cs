@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using Serilog;
 
 namespace EvolutionSimulations
 {
@@ -113,7 +114,7 @@ namespace EvolutionSimulations
                     {
                         creature.FoodCollected += 1.0 / foodUnits[foodId].ReachingCreatures.Count;
                         foodUnits[foodId].Eaten = true;
-                        Console.WriteLine($"Creature ID#{creature.Id} collected {1.0 / foodUnits[foodId].ReachingCreatures.Count:N2} food " +
+                        Log.Information($"Creature ID#{creature.Id} collected {1.0 / foodUnits[foodId].ReachingCreatures.Count:N2} food " +
                             $"from food ID#{foodId}, {foodUnits[foodId].ReachingCreatures.Count} creature(s) ate from this food.");
                     }
                 }
@@ -124,7 +125,7 @@ namespace EvolutionSimulations
                         double damageTaken = creatures.Find(c => c.Id == creatureInReachId).TakeDamageFromFight(creature);
                         if (damageTaken != 0.0)
                         {
-                            Console.WriteLine($"Creature ID#{creature.Id} fought with creature ID#{creatureInReachId}, and caused it {damageTaken:N2} damage.");
+                            Log.Information($"Creature ID#{creature.Id} fought with creature ID#{creatureInReachId}, and caused it {damageTaken:N2} damage.");
                         }
                     }
                 }

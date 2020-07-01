@@ -1,5 +1,6 @@
 ﻿using EvolutionSimulations.DTOs;
 using Newtonsoft.Json;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,30 +10,56 @@ namespace EvolutionSimulations
 {
     internal class SimulationResults
     {
-        public DayStepResult<CreatureListDTO> CreatureSteps;
-        public DayStepResult<Terrain> TerrainSteps;
-        public DayStepResult<List<int>> PopulationSteps;
+        public List<DayStepResult<CreatureListDTO>> CreatureSteps;
+        public List<DayStepResult<Terrain>> TerrainSteps;
+        public List<DayStepResult<List<int>>> PopulationSteps;
 
-        public SimulationResults(DayStepResult<CreatureListDTO> creatureResults, DayStepResult<Terrain> terrainResults, DayStepResult<List<int>> populationResults)
+        private readonly bool _logOnlyPopulation;
+
+        public SimulationResults(bool logOnlyPopulation)
         {
-            CreatureSteps = creatureResults;
-            TerrainSteps = terrainResults;
+            _logOnlyPopulation = logOnlyPopulation;
+
+            if (!_logOnlyPopulation)
+            {
+                CreatureSteps = new List<DayStepResult<CreatureListDTO>>();
+                TerrainSteps = new List<DayStepResult<Terrain>>();
+            }
+
+            PopulationSteps = new List<DayStepResult<List<int>>>();
+        }
+
+        public SimulationResults(List<DayStepResult<CreatureListDTO>> creatureResults, List<DayStepResult<Terrain>> terrainResults,
+            List<DayStepResult<List<int>>> populationResults, bool logOnlyPopulation)
+        {
+            _logOnlyPopulation = logOnlyPopulation;
+
+            if (!_logOnlyPopulation)
+            {
+                CreatureSteps = creatureResults;
+                TerrainSteps = terrainResults;
+            }
+            
             PopulationSteps = populationResults;
         }
 
         internal void PrintToFile()
         {
             if (!Directory.Exists(Directory.GetCurrentDirectory() + @"\logs")) Directory.CreateDirectory((Directory.GetCurrentDirectory() + @"\logs"));
-            using (StreamWriter file = File.CreateText(Directory.GetCurrentDirectory() + @"\logs\creatures.json"))
-            {
-                string jsonString = JsonConvert.SerializeObject(CreatureSteps);
-                file.Write(jsonString);
-            }
 
-            using (StreamWriter file = File.CreateText(Directory.GetCurrentDirectory() + @"\logs\terrain.json"))
+            if (!_logOnlyPopulation)
             {
-                string jsonString = JsonConvert.SerializeObject(TerrainSteps);
-                file.Write(jsonString);
+                using (StreamWriter file = File.CreateText(Directory.GetCurrentDirectory() + @"\logs\creatures.json"))
+                {
+                    string jsonString = JsonConvert.SerializeObject(CreatureSteps);
+                    file.Write(jsonString);
+                }
+
+                using (StreamWriter file = File.CreateText(Directory.GetCurrentDirectory() + @"\logs\terrain.json"))
+                {
+                    string jsonString = JsonConvert.SerializeObject(TerrainSteps);
+                    file.Write(jsonString);
+                }
             }
 
             using (StreamWriter file = File.CreateText(Directory.GetCurrentDirectory() + @"\logs\population.json"))
@@ -40,6 +67,16 @@ namespace EvolutionSimulations
                 string jsonString = JsonConvert.SerializeObject(PopulationSteps);
                 file.Write(jsonString);
             }
+        }
+
+        internal void AddSingleSimulationResults(SingleSimulationResults singleSimulationResults)
+        {
+            if (!_logOnlyPopulation)
+            {
+                CreatureSteps.Add(singleSimulationResults.CreatureResults);
+                TerrainSteps.Add(singleSimulationResults.TerrainResults);
+            }
+            PopulationSteps.Add(singleSimulationResults.PopulationResults);
         }
     }
 }
