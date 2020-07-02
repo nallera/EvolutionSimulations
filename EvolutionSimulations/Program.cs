@@ -37,8 +37,7 @@ namespace EvolutionSimulations
                 Population populations = new Population(new List<CreatureType>
                 {
                     new CreatureType { CreatureTrait.Friendly },
-                    new CreatureType { CreatureTrait.Hostile },
-                    new CreatureType { CreatureTrait.Friendly, CreatureTrait.Hostile },
+                    new CreatureType { CreatureTrait.Hostile }
                 });
 
                 creatures.CreatureAdded += populations.creatures_CreatureAdded;

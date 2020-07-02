@@ -7,13 +7,13 @@ stringData = string(fileOutput{:});
 fclose(file);
 x = jsondecode(stringData);
 
-friendly = cell(size(x,1),1);
-hostile = cell(size(x,1),1);
+friendly = zeros(size(x,1),50);
+hostile = zeros(size(x,1),50);
 
 for i = 1:size(x,1)
     
-    friendly{i} = x(i).results(:,:,1);
-    hostile{i} = x(i).results(:,:,2);
+    friendly(i,1:length(x(i).results(:,:,1))) = x(i).results(:,:,1);
+    hostile(i,1:length(x(i).results(:,:,2))) = x(i).results(:,:,2);
     
 end
 
