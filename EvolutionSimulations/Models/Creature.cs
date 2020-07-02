@@ -145,8 +145,8 @@ namespace EvolutionSimulations
             {
                 if (creature.Traits.Contains(CreatureTrait.Hostile))
                 {
-                    Health -= creature.AttackPower * 2;
-                    return creature.AttackPower * 2;
+                    Health -= creature.AttackPower * 4;
+                    return creature.AttackPower * 4;
                 }
             }
             else if (Traits.Contains(CreatureTrait.Hostile))

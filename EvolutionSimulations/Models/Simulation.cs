@@ -12,10 +12,10 @@ namespace EvolutionSimulations
     {
         private int _simulationDays;
         private int _stepsPerDay;
-        private List<Mutation> _mutations;
+
+        private readonly Population _initialPopulation;
 
         public Terrain CurrentTerrain;
-        public CreatureList CurrentCreatures;
         public Population CurrentPopulation;
         public DayStepResult<CreatureListDTO> CreatureResults;
         public DayStepResult<Terrain> TerrainResults;
@@ -26,21 +26,20 @@ namespace EvolutionSimulations
 
         private readonly bool _logOnlyPopulation;
 
-        public Simulation(Terrain simulationTerrain, int simulationDays, int stepsPerDay, CreatureList creatures, 
-            List<Mutation> mutations, Population populations, int foodToSurvive, int foodToReproduce, bool logOnlyPopulation)
+        public Simulation(Terrain simulationTerrain, int simulationDays, int stepsPerDay,
+            Population initialPopulation, int foodToSurvive, int foodToReproduce, bool logOnlyPopulation)
         {
             CurrentTerrain = simulationTerrain;
             
             _simulationDays = simulationDays;
             _stepsPerDay = stepsPerDay;
-            _mutations = mutations;
             FoodToSurvive = foodToSurvive;
             FoodToReproduce = foodToReproduce;
 
             _logOnlyPopulation = logOnlyPopulation;
 
-            CurrentCreatures = creatures;
-            CurrentPopulation = new Population(populations);
+            _initialPopulation = initialPopulation;
+            CurrentPopulation = new Population();
 
             if(!_logOnlyPopulation)
             {
@@ -51,12 +50,24 @@ namespace EvolutionSimulations
             PopulationResults = new DayStepResult<List<int>>();
         }
 
+        public void SetNewSimulation()
+        {
+            if (!_logOnlyPopulation)
+            {
+                CreatureResults.Clear();
+                TerrainResults.Clear();
+            }
+            PopulationResults.Clear();
+
+            CurrentPopulation = new Population(_initialPopulation);
+        }
+
         public SingleSimulationResults RunSimulation(int foodPerDay, PositionType positionType)
         {
             for (int day = 0; day < _simulationDays; day++)
             {
-                CurrentCreatures.UpdateCreatures();
-                if (CurrentCreatures.Count == 0)
+                CurrentPopulation.UpdateCreatures();
+                if (CurrentPopulation.CreatureCount == 0)
                 {
                     Log.Information($"All the creatures died on day {day - 1}, so no more days will be simulated.");
                     break;
@@ -71,8 +82,8 @@ namespace EvolutionSimulations
                 StorePopulation(day);
 
                 DetermineCreaturesNextStatus();
-                PrintCreatures(CurrentCreatures, day, false);
-                PrintCreaturesNextStatus(CurrentCreatures);
+                PrintCreatures(CurrentPopulation.Creatures, day, false);
+                PrintCreaturesNextStatus(CurrentPopulation.Creatures);
             }
 
             return new SingleSimulationResults(CreatureResults, TerrainResults, PopulationResults, _logOnlyPopulation);
@@ -119,32 +130,25 @@ namespace EvolutionSimulations
             Log.Information("");
         }
 
-        //private void PrintTerrainStep(string message)
-        //{
-        //    Log.Information(message);
-        //    CurrentTerrain.PrintTerrain();
-        //    Log.Information("");
-        //}
-
         private void DetermineCreaturesNextStatus()
         {
-            CurrentCreatures.DetermineCreaturesNextStatus(FoodToSurvive, FoodToReproduce);
+            CurrentPopulation.DetermineCreaturesNextStatus(FoodToSurvive, FoodToReproduce);
         }
 
         private void DetermineStepActions()
         {
-            CurrentCreatures.CheckSurroundings(CurrentTerrain.FoodUnits);
-            CurrentCreatures.CheckInteractions(CurrentTerrain.FoodUnits);
+            CurrentPopulation.CreaturesCheckSurroundings(CurrentTerrain.FoodUnits);
+            CurrentPopulation.CheckCreaturesInteractions(CurrentTerrain.FoodUnits);
             CurrentTerrain.RemoveEatenFood();
         }
 
         private void SetupDayStart(int foodPerDay, PositionType positionType, int day)
         {
-            CurrentCreatures.ResetCreatures();
-            CurrentCreatures.SetPositions(positionType, CurrentTerrain.X, CurrentTerrain.Y);
+            CurrentPopulation.ResetCreatures();
+            CurrentPopulation.SetPositions(positionType, CurrentTerrain.X, CurrentTerrain.Y);
             CurrentTerrain.ClearFood();
             CurrentTerrain.AddRandomFood(foodPerDay);
-            PrintCreatures(CurrentCreatures, day, true);
+            PrintCreatures(CurrentPopulation.Creatures, day, true);
             PrintPopulations(day, true);
         }
 
@@ -169,18 +173,18 @@ namespace EvolutionSimulations
 
         private void SimulateStep(int day, double xLimit, double yLimit)
         {
-            foreach (Creature creature in CurrentCreatures)
+            foreach (Creature creature in CurrentPopulation.Creatures)
             {
                 Log.Information($"Creature ID#{creature.Id} position X:{creature.Position.X:N2}, Y:{creature.Position.Y:N2}");
             }
-            CurrentCreatures.MoveCreatures(xLimit, yLimit);
+            CurrentPopulation.MoveCreatures(xLimit, yLimit);
             if(!_logOnlyPopulation) StoreStepResults(day);
             DetermineStepActions();
         }
 
         private void StoreStepResults(int day)
         {
-            CreatureResults.AddStep(new CreatureListDTO(CurrentCreatures), day);
+            CreatureResults.AddStep(new CreatureListDTO(CurrentPopulation.Creatures), day);
             TerrainResults.AddStep(new Terrain(CurrentTerrain), day);
         }
     }

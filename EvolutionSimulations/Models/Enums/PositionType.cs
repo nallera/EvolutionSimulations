@@ -1,6 +1,6 @@
 ﻿namespace EvolutionSimulations
 {
-    internal enum PositionType
+    public enum PositionType
     {
         Border,
         Random

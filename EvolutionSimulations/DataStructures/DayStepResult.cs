@@ -9,10 +9,16 @@ namespace EvolutionSimulations
     public class DayStepResult<T>
     {
         public List<List<T>> results;
+        private DayStepResult<List<int>> populationResults;
 
         public DayStepResult()
         {
             results = new List<List<T>>();
+        }
+
+        public DayStepResult(DayStepResult<T> source)
+        {
+            results = source.results.ConvertAll(result => new List<T>(result));
         }
 
         public void AddStep(T stepData, int day)
@@ -32,6 +38,11 @@ namespace EvolutionSimulations
         public List<T> GetDay(int day)
         {
             return results[day];
+        }
+
+        public void Clear()
+        {
+            results.Clear();
         }
     }
 }

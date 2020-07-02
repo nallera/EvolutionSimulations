@@ -27,3 +27,13 @@ plot(hostileMean)
 legend('Friendly','Hostile')
 xlabel('day')
 ylabel('number of creatures')
+
+figure
+hold on
+for i = 1:size(friendly,1)
+    plot(friendly(i,:),'-b');
+end
+    
+for i = 1:size(hostile,1)
+    plot(hostile(i,:),'-r');
+end

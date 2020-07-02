@@ -22,11 +22,16 @@ namespace EvolutionSimulations
             creatures = new List<Creature>();
             lastId = -1;
         }
+
+        public void Clear()
+        {
+            creatures.Clear();
+            lastId = -1;
+        }
         
         public int AddCopyCreature(Creature sourceCreature)
         {
             lastId++;
-            OnCreatureAdded(new CreatureTraitsEventArgs { Traits = sourceCreature.Traits});
             creatures.Add(new Creature(sourceCreature) { Id = lastId});
             return creatures.Count;
         }
@@ -34,7 +39,6 @@ namespace EvolutionSimulations
         public int AddNewCreature(CreatureType creatureType)
         {
             lastId++;
-            OnCreatureAdded(new CreatureTraitsEventArgs { Traits = creatureType.Traits });
             creatures.Add(new Creature(lastId, creatureType.Traits));
 
             return creatures.Count;
@@ -42,28 +46,14 @@ namespace EvolutionSimulations
 
         public void RemoveCreature(int id)
         {
-            OnCreatureRemoved(new CreatureTraitsEventArgs { Traits = creatures.Find(creature => creature.Id == id).Traits });
             creatures.RemoveAt(creatures.FindIndex(creature => creature.Id == id));
         }
 
-        internal void SetPositions(PositionType positionType, double xLimit, double yLimit)
+        public void SetPositions(PositionType positionType, double xLimit, double yLimit)
         {
             foreach (Creature creature in creatures)
             {
                 creature.SetPosition(positionType, xLimit, yLimit);
-            }
-        }
-
-        public void UpdateCreatures()
-        {
-            foreach (Creature reproducingCreature in creatures.FindAll(creature => creature.NextStatus == LifeStatus.Reproduce))
-            {
-                AddCopyCreature(reproducingCreature);
-            }
-
-            foreach (Creature dyingCreatures in creatures.FindAll(creature => creature.NextStatus == LifeStatus.Die))
-            {
-                RemoveCreature(dyingCreatures.Id);
             }
         }
 
@@ -80,19 +70,10 @@ namespace EvolutionSimulations
             return positions;
         }
 
-        //internal void ProcessInteractions(List<CreatureInteraction> interactions)
-        //{
-        //    foreach (var interaction in interactions)
-        //    {
-        //        if(interaction.FoodInvolved())
-        //        {
-        //            foreach(var id in interaction.GetIds())
-        //            {
-        //                creatures[creatures.FindIndex(creature => creature.Id == id)].FoodCollected += 1 / interaction.CreaturesCount;
-        //            }
-        //        }
-        //    }
-        //}
+        public List<Creature> FindAll(Predicate<Creature> match)
+        {
+            return creatures.FindAll(match);
+        }
 
         public void CheckSurroundings(List<Food> food)
         {
@@ -173,19 +154,5 @@ namespace EvolutionSimulations
         {
             return this.GetEnumerator();
         }
-
-        protected virtual void OnCreatureAdded(CreatureTraitsEventArgs e)
-        {
-            EventHandler<CreatureTraitsEventArgs> handler = CreatureAdded;
-            handler?.Invoke(this, e);
-        }
-        protected virtual void OnCreatureRemoved(CreatureTraitsEventArgs e)
-        {
-            EventHandler<CreatureTraitsEventArgs> handler = CreatureRemoved;
-            handler?.Invoke(this, e);
-        }
-
-        public event EventHandler<CreatureTraitsEventArgs> CreatureAdded;
-        public event EventHandler<CreatureTraitsEventArgs> CreatureRemoved;
     }
 }

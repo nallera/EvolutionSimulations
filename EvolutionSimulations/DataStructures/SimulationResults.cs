@@ -73,10 +73,10 @@ namespace EvolutionSimulations
         {
             if (!_logOnlyPopulation)
             {
-                CreatureSteps.Add(singleSimulationResults.CreatureResults);
-                TerrainSteps.Add(singleSimulationResults.TerrainResults);
+                CreatureSteps.Add(new DayStepResult<CreatureListDTO>(singleSimulationResults.CreatureResults));
+                TerrainSteps.Add(new DayStepResult<Terrain>(singleSimulationResults.TerrainResults));
             }
-            PopulationSteps.Add(singleSimulationResults.PopulationResults);
+            PopulationSteps.Add(new DayStepResult<List<int>>(singleSimulationResults.PopulationResults));
         }
     }
 }
