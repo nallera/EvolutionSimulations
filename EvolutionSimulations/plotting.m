@@ -1,39 +1,74 @@
 clear
 close all
 
-file = fopen("C:\Users\Nico\source\repos\EvolutionSimulations\EvolutionSimulations\bin\Debug\netcoreapp3.1\logs\population.json",'r');;
+%% Parameters
+
+file = fopen("C:\Users\Nico\source\repos\EvolutionSimulations\EvolutionSimulations\bin\Debug\netcoreapp3.1\logs\parameters.json",'r');
 fileOutput = textscan(file,'%s');
-stringData = string(fileOutput{:});
 fclose(file);
-x = jsondecode(stringData);
+stringData = string(fileOutput{:});
+parameters = jsondecode(stringData);
 
-friendly = zeros(size(x,1),50);
-hostile = zeros(size(x,1),50);
+xLimit = parameters.xLimit;
+yLimit = parameters.yLimit;
+simulationDays = parameters.simulationDays;
+stepsPerDay = parameters.stepsPerDay;
+foodPerDay = parameters.foodPerDay;
+foodToSurvive = parameters.foodToSurvive;
+foodToReproduce = parameters.foodToReproduce;
+numberOfSimulations = parameters.numberOfSimulations;
+logOnlyPopulation = parameters.logOnlyPopulation;
+CreatureTypes = parameters.CreatureTypes;
+numberOfCreatureTypes = size(CreatureTypes,1);
 
-for i = 1:size(x,1)
+%% Population
+
+file = fopen("C:\Users\Nico\source\repos\EvolutionSimulations\EvolutionSimulations\bin\Debug\netcoreapp3.1\logs\population.json",'r');
+fileOutput = textscan(file,'%s');
+fclose(file);
+stringData = string(fileOutput{:});
+populationData = jsondecode(stringData);
+
+populations = zeros(numberOfCreatureTypes,numberOfSimulations,simulationDays);
+
+for simulationIndex = 1:numberOfSimulations
     
-    friendly(i,1:length(x(i).results(:,:,1))) = x(i).results(:,:,1);
-    hostile(i,1:length(x(i).results(:,:,2))) = x(i).results(:,:,2);
-    
+    for creatureType = 1:numberOfCreatureTypes
+        populations(creatureType,simulationIndex,1:length(populationData(simulationIndex).results(:,:,creatureType))) = ...
+        populationData(simulationIndex).results(:,:,creatureType);
+    end
 end
 
-friendlyMean = mean(friendly,1);
-hostileMean = mean(hostile,1);
+populationsMean = reshape(mean(populations,2),numberOfCreatureTypes,simulationDays);
+populationsMean(numberOfCreatureTypes + 1,:) = sum(populationsMean,1);
+
+%% Plotting
+
+creatureTypeColor = rand(numberOfCreatureTypes,1,3);
 
 figure
+title('Population mean')
 hold on
-plot(friendlyMean)
-plot(hostileMean)
-legend('Friendly','Hostile')
-xlabel('day')
-ylabel('number of creatures')
+for creatureType = 1:numberOfCreatureTypes
+    plot(populationsMean(creatureType,:),'Color',creatureTypeColor(creatureType,:,:),...
+        'DisplayName',CreatureTypes{creatureType});
+end
+plot(populationsMean(numberOfCreatureTypes + 1,:),'-k',...
+    'DisplayName','Total');
+xlabel('Day')
+ylabel('Number of creatures')
+legend('Location','best')
 
 figure
+title('Populations')
 hold on
-for i = 1:size(friendly,1)
-    plot(friendly(i,:),'-b');
+for creatureType = 1:numberOfCreatureTypes
+    for simulationIndex = 1:numberOfSimulations
+        plot(reshape(populations(creatureType,simulationIndex,:),1,simulationDays),...
+            'Color',creatureTypeColor(creatureType,:,:),'HandleVisibility','off');
+    end
+    plot(0,0,'Color',creatureTypeColor(creatureType,:,:),'DisplayName',CreatureTypes{creatureType})
 end
-    
-for i = 1:size(hostile,1)
-    plot(hostile(i,:),'-r');
-end
+xlabel('Day')
+ylabel('Number of creatures')
+legend('Location','best')
