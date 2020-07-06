@@ -39,7 +39,7 @@ namespace EvolutionSimulations
             _logOnlyPopulation = logOnlyPopulation;
 
             _initialPopulation = initialPopulation;
-            CurrentPopulation = new Population();
+            CurrentPopulation = new Population(_initialPopulation);
 
             if(!_logOnlyPopulation)
             {
@@ -74,9 +74,11 @@ namespace EvolutionSimulations
                 }
                 SetupDayStart(foodPerDay, positionType, day);
 
-                for (int step = 0; step < _stepsPerDay; step++)
+                int step = 0;
+                while(step < _stepsPerDay && CurrentPopulation.CreaturesHaveEnergy())
                 {
                     SimulateStep(day, CurrentTerrain.X, CurrentTerrain.Y);
+                    step++;
                 }
 
                 StorePopulation(day);

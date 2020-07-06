@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
 using System.Text;
 
 namespace EvolutionSimulations
@@ -14,6 +15,8 @@ namespace EvolutionSimulations
         public double AttackPower;
         public double MaxSpeed;
         public double Reach;
+        public double Energy;
+
         public List<CreatureTrait> Traits { get; set; }
 
         public double FoodCollected;
@@ -24,6 +27,9 @@ namespace EvolutionSimulations
 
         public List<int> FoodInReachIds;
         public List<int> CreaturesInReachIds;
+
+        private readonly int _hostileAttackMultiplier = 4;
+        private readonly double _attackEnergyCost = 10;
 
         public Creature(Creature source)
         {
@@ -47,14 +53,17 @@ namespace EvolutionSimulations
             CreaturesInReachIds = new List<int>(source.CreaturesInReachIds);
         }
 
-        public Creature(int id, List<CreatureTrait> traits)
+        public Creature(int id, List<CreatureTrait> traits, CreatureCharacteristics characteristics)
         {
             Id = id;
 
-            Health = 100.0;
-            AttackPower = 10.0;
-            MaxSpeed = 1.0;
-            Reach = 1.0;
+            Health = characteristics.Health;
+            AttackPower = characteristics.AttackPower;
+            MaxSpeed = characteristics.MaxSpeed;
+            Reach = characteristics.Reach;
+            Energy = characteristics.Energy;
+
+
             Traits = new List<CreatureTrait>(traits);
 
             FoodCollected = 0;
@@ -71,7 +80,7 @@ namespace EvolutionSimulations
 
         public void Move(double xLimit, double yLimit)
         {
-            double angle, speed, newXPosition = 0.0, newYPosition = 0.0;
+            double angle, speed = 0.0, newXPosition = 0.0, newYPosition = 0.0;
             bool outOfLimits = true;
 
             while (outOfLimits)
@@ -87,6 +96,8 @@ namespace EvolutionSimulations
 
             Position.X = newXPosition;
             Position.Y = newYPosition;
+
+            Energy -= speed;
         }
 
         internal void SetPosition(PositionType positionType, double xLimit, double yLimit)
@@ -139,14 +150,27 @@ namespace EvolutionSimulations
             FoodCollected = 0;
         }
 
+        internal void SpendEnergyInFight()
+        {
+            switch(Traits)
+            {
+                case var t when t.Contains(CreatureTrait.Friendly):
+                    Energy -= _attackEnergyCost;
+                    break;
+                case var t when t.Contains(CreatureTrait.Hostile):
+                    Energy -= _attackEnergyCost * 2;
+                    break;
+            }
+        }
+
         public double TakeDamageFromFight(Creature creature)
         {
             if (Traits.Contains(CreatureTrait.Friendly))
             {
                 if (creature.Traits.Contains(CreatureTrait.Hostile))
                 {
-                    Health -= creature.AttackPower * 4;
-                    return creature.AttackPower * 4;
+                    Health -= creature.AttackPower * _hostileAttackMultiplier;
+                    return creature.AttackPower * _hostileAttackMultiplier;
                 }
             }
             else if (Traits.Contains(CreatureTrait.Hostile))

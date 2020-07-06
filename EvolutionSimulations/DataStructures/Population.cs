@@ -11,21 +11,25 @@ namespace EvolutionSimulations
         public CreatureList Creatures;
         public int CreatureCount { get { return Creatures.Count; } }
 
-        public Population()
-        {
-            CreatureTypes = new List<CreatureType>();
-            Creatures = new CreatureList();
-        }
-        public Population(List<CreatureType> creatureTypes)
+        private CreatureCharacteristics _baseCharacteristics;
+
+        //public Population()
+        //{
+        //    CreatureTypes = new List<CreatureType>();
+        //    Creatures = new CreatureList();
+        //}
+        public Population(List<CreatureType> creatureTypes, CreatureCharacteristics characteristics)
         {
             CreatureTypes = new List<CreatureType>(creatureTypes);
             Creatures = new CreatureList();
+            _baseCharacteristics = new CreatureCharacteristics(characteristics);
         }
 
         public Population(Population source)
         {
             CreatureTypes = source.CreatureTypes.ConvertAll(creatureType => new CreatureType(creatureType));
             Creatures = new CreatureList(source.Creatures);
+            _baseCharacteristics = new CreatureCharacteristics(source._baseCharacteristics);
         }
 
         public void Clear()
@@ -48,7 +52,7 @@ namespace EvolutionSimulations
 
         public void AddNewCreature(CreatureType creatureType)
         {
-            Creatures.AddNewCreature(creatureType);
+            Creatures.AddNewCreature(creatureType, _baseCharacteristics);
             CreatureAdded(creatureType.Traits);
         }
         public void AddCopyCreature(Creature creature)
@@ -78,6 +82,11 @@ namespace EvolutionSimulations
         public void DetermineCreaturesNextStatus(int foodToSurvive, int foodToReproduce)
         {
             Creatures.DetermineCreaturesNextStatus(foodToSurvive, foodToReproduce);
+        }
+
+        internal bool CreaturesHaveEnergy()
+        {
+            return Creatures.HaveEnergy();
         }
 
         public void CreaturesCheckSurroundings(List<Food> food)

@@ -36,10 +36,10 @@ namespace EvolutionSimulations
             return creatures.Count;
         }
 
-        public int AddNewCreature(CreatureType creatureType)
+        public int AddNewCreature(CreatureType creatureType, CreatureCharacteristics characteristics)
         {
             lastId++;
-            creatures.Add(new Creature(lastId, creatureType.Traits));
+            creatures.Add(new Creature(lastId, creatureType.Traits, characteristics));
 
             return creatures.Count;
         }
@@ -108,9 +108,26 @@ namespace EvolutionSimulations
                         {
                             Log.Information($"Creature ID#{creature.Id} fought with creature ID#{creatureInReachId}, and caused it {damageTaken:N2} damage.");
                         }
+                        creature.SpendEnergyInFight();
                     }
                 }
             }
+        }
+
+        public bool HaveEnergy()
+        {
+            bool result = false;
+
+            foreach (Creature creature in creatures)
+            {
+                if (creature.Energy > 0)
+                {
+                    result = true;
+                    break;
+                }
+            }
+
+            return result;
         }
 
         public void ResetSurroundingsFindings()

@@ -35,7 +35,14 @@ namespace EvolutionSimulations
             {
                 new CreatureType { CreatureTrait.Friendly },
                 new CreatureType { CreatureTrait.Hostile }
-            });
+            }, new CreatureCharacteristics
+            {
+                Health = 100.0,
+                AttackPower = 10.0,
+                MaxSpeed = 1.0,
+                Reach = 1.0,
+                Energy = (double)Parameters.stepsPerDay * 2
+            }) ;
 
             foreach (CreatureType creatureType in initialPopulation.CreatureTypes)
             {
