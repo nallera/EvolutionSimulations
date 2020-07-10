@@ -36,10 +36,10 @@ namespace EvolutionSimulations
             return creatures.Count;
         }
 
-        public int AddNewCreature(CreatureType creatureType, CreatureCharacteristics characteristics)
+        public int AddNewCreature(ICreatureTypeBehavior creatureTypeBehavior)
         {
             lastId++;
-            creatures.Add(new Creature(lastId, creatureType.Traits, characteristics));
+            creatures.Add(new Creature(lastId, creatureTypeBehavior));
 
             return creatures.Count;
         }

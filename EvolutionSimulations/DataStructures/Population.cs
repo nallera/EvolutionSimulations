@@ -13,11 +13,6 @@ namespace EvolutionSimulations
 
         private CreatureCharacteristics _baseCharacteristics;
 
-        //public Population()
-        //{
-        //    CreatureTypes = new List<CreatureType>();
-        //    Creatures = new CreatureList();
-        //}
         public Population(List<CreatureType> creatureTypes, CreatureCharacteristics characteristics)
         {
             CreatureTypes = new List<CreatureType>(creatureTypes);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EvolutionSimulations.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Reflection.Metadata;
 using System.Text;
@@ -17,7 +18,7 @@ namespace EvolutionSimulations
         public double Reach;
         public double Energy;
 
-        public List<CreatureTrait> Traits { get; set; }
+        public ICreatureTypeBehavior CreatureTypeBehavior { get; set; }
 
         public double FoodCollected;
         public double FoodCollectedLastDay;
@@ -28,8 +29,6 @@ namespace EvolutionSimulations
         public List<int> FoodInReachIds;
         public List<int> CreaturesInReachIds;
 
-        private readonly int _hostileAttackMultiplier = 4;
-        private readonly double _attackEnergyCost = 10;
 
         public Creature(Creature source)
         {
@@ -39,7 +38,7 @@ namespace EvolutionSimulations
             AttackPower = source.AttackPower;
             MaxSpeed = source.MaxSpeed;
             Reach = source.Reach;
-            Traits = new List<CreatureTrait>(source.Traits);
+            CreatureTypeBehavior = source.CreatureTypeBehavior;
 
             FoodCollected = 0;
             FoodCollectedLastDay = 0;
@@ -53,18 +52,17 @@ namespace EvolutionSimulations
             CreaturesInReachIds = new List<int>(source.CreaturesInReachIds);
         }
 
-        public Creature(int id, List<CreatureTrait> traits, CreatureCharacteristics characteristics)
+        public Creature(int id, ICreatureTypeBehavior creatureTypeBehavior)
         {
             Id = id;
 
-            Health = characteristics.Health;
-            AttackPower = characteristics.AttackPower;
-            MaxSpeed = characteristics.MaxSpeed;
-            Reach = characteristics.Reach;
-            Energy = characteristics.Energy;
+            CreatureTypeBehavior = creatureTypeBehavior;
 
-
-            Traits = new List<CreatureTrait>(traits);
+            Health = creatureTypeBehavior.Health;
+            AttackPower = creatureTypeBehavior.AttackPower;
+            MaxSpeed = creatureTypeBehavior.MaxSpeed;
+            Reach = creatureTypeBehavior.Reach;
+            Energy = creatureTypeBehavior.Energy;
 
             FoodCollected = 0;
             FoodCollectedLastDay = 0;
@@ -150,44 +148,14 @@ namespace EvolutionSimulations
             FoodCollected = 0;
         }
 
-        internal void SpendEnergyInFight()
+        public void SpendEnergyInFight()
         {
-            switch(Traits)
-            {
-                case var t when t.Contains(CreatureTrait.Friendly):
-                    Energy -= _attackEnergyCost;
-                    break;
-                case var t when t.Contains(CreatureTrait.Hostile):
-                    Energy -= _attackEnergyCost * 2;
-                    break;
-            }
+            Energy -= CreatureTypeBehavior.EnergySpentInFight;
         }
 
         public double TakeDamageFromFight(Creature creature)
         {
-            if (Traits.Contains(CreatureTrait.Friendly))
-            {
-                if (creature.Traits.Contains(CreatureTrait.Hostile))
-                {
-                    Health -= creature.AttackPower * _hostileAttackMultiplier;
-                    return creature.AttackPower * _hostileAttackMultiplier;
-                }
-            }
-            else if (Traits.Contains(CreatureTrait.Hostile))
-            {
-                if (creature.Traits.Contains(CreatureTrait.Hostile))
-                {
-                    Health -= creature.AttackPower;
-                    return creature.AttackPower;
-                }
-                else if (creature.Traits.Contains(CreatureTrait.Friendly))
-                {
-                    Health -= creature.AttackPower;
-                    return creature.AttackPower;
-                }
-            }
-
-            return 0.0;
+            return CreatureTypeBehavior.TakeDamageFromFight(creature);
         }
 
         internal void CheckSurroundings(List<CreatureIdAndPosition> creatures, List<Food> food)
@@ -232,10 +200,8 @@ namespace EvolutionSimulations
 
         internal void Reset()
         {
-            Health = 100.0;
-            AttackPower = 10.0;
-            MaxSpeed = 1.0;
-            Reach = 1.0;
+            Health = CreatureTypeBehavior.Health;
+            Energy = CreatureTypeBehavior.Energy;
         }
     }
 }
