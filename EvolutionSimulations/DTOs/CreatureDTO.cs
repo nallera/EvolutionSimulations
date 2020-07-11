@@ -6,7 +6,7 @@ namespace EvolutionSimulations.DTOs
     {
         public int Id;
         public double Health;
-        public List<CreatureTrait> Traits { get; set; }
+        public ICreatureType CreatureType { get; set; }
 
         public double FoodCollected;
         public LifeStatus NextStatus;
@@ -17,7 +17,7 @@ namespace EvolutionSimulations.DTOs
         {
             Id = source.Id;
             Health = source.Health;
-            Traits = new List<CreatureTrait>(source.Traits);
+            CreatureType = source.CreatureType;
             FoodCollected = source.FoodCollected;
             NextStatus = source.NextStatus;
             Position = new Coordinate(source.Position);

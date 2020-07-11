@@ -59,6 +59,7 @@ namespace EvolutionSimulations
             }
             PopulationResults.Clear();
 
+            CurrentPopulation.ClearCreatureTypesCount();
             CurrentPopulation = new Population(_initialPopulation);
         }
 
@@ -94,7 +95,7 @@ namespace EvolutionSimulations
         private void StorePopulation(int day)
         {
             var population = new List<int>();
-            foreach (CreatureType creatureType in CurrentPopulation.CreatureTypes)
+            foreach (ICreatureType creatureType in CurrentPopulation.CreatureTypes)
             {
                 population.Add(creatureType.NumberOfCreatures);
             }
@@ -159,7 +160,7 @@ namespace EvolutionSimulations
             Log.Information($"Creatures {(beginningOfDay ? "that start" : "at the end of")} day {day}:");
             foreach (Creature creature in currentCreatures)
             {
-                Log.Information($"Creature ID#{creature.Id}, Health {creature.Health} ({creature.Traits[0]})");
+                Log.Information($"Creature ID#{creature.Id}, Health {creature.Health} ({creature.CreatureType.Name})");
             }
             Log.Information("");
         }
@@ -167,7 +168,7 @@ namespace EvolutionSimulations
         public void PrintPopulations(int day, bool beginningOfDay)
         {
             Log.Information($"Population at the {(beginningOfDay ? "start" : "end")} of day {day}:");
-            foreach (CreatureType creatureType in CurrentPopulation.CreatureTypes)
+            foreach (ICreatureType creatureType in CurrentPopulation.CreatureTypes)
             {
                 Log.Information($"Number of creatures: {creatureType.NumberOfCreatures}");
             }

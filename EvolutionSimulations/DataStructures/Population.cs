@@ -7,24 +7,20 @@ namespace EvolutionSimulations
 {
     public class Population
     {
-        public List<CreatureType> CreatureTypes { get; set; }
+        public List<ICreatureType> CreatureTypes { get; set; }
         public CreatureList Creatures;
         public int CreatureCount { get { return Creatures.Count; } }
 
-        private CreatureCharacteristics _baseCharacteristics;
-
-        public Population(List<CreatureType> creatureTypes, CreatureCharacteristics characteristics)
+        public Population(List<ICreatureType> creatureTypes)
         {
-            CreatureTypes = new List<CreatureType>(creatureTypes);
+            CreatureTypes = creatureTypes;
             Creatures = new CreatureList();
-            _baseCharacteristics = new CreatureCharacteristics(characteristics);
         }
 
         public Population(Population source)
         {
-            CreatureTypes = source.CreatureTypes.ConvertAll(creatureType => new CreatureType(creatureType));
+            CreatureTypes = source.CreatureTypes;
             Creatures = new CreatureList(source.Creatures);
-            _baseCharacteristics = new CreatureCharacteristics(source._baseCharacteristics);
         }
 
         public void Clear()
@@ -33,7 +29,7 @@ namespace EvolutionSimulations
             Creatures.Clear();
         }
 
-        public CreatureType this[int index]
+        public ICreatureType this[int index]
         {
             get
             {
@@ -45,27 +41,20 @@ namespace EvolutionSimulations
             }
         }
 
-        public void AddNewCreature(CreatureType creatureType)
+        public void AddCreature(ICreatureType creatureType)
         {
-            Creatures.AddNewCreature(creatureType, _baseCharacteristics);
-            CreatureAdded(creatureType.Traits);
-        }
-        public void AddCopyCreature(Creature creature)
-        {
-            Creatures.AddCopyCreature(creature);
-            CreatureAdded(creature.Traits);
+            Creatures.AddCreature(creatureType);
         }
         public void RemoveCreature(Creature creature)
         {
             Creatures.RemoveCreature(creature.Id);
-            CreatureRemoved(creature.Traits);
         }
 
         public void UpdateCreatures()
         {
             foreach (Creature reproducingCreature in Creatures.FindAll(creature => creature.NextStatus == LifeStatus.Reproduce))
             {
-                AddCopyCreature(reproducingCreature);
+                AddCreature(reproducingCreature.CreatureType);
             }
 
             foreach (Creature dyingCreature in Creatures.FindAll(creature => creature.NextStatus == LifeStatus.Die))
@@ -77,6 +66,14 @@ namespace EvolutionSimulations
         public void DetermineCreaturesNextStatus(int foodToSurvive, int foodToReproduce)
         {
             Creatures.DetermineCreaturesNextStatus(foodToSurvive, foodToReproduce);
+        }
+
+        internal void ClearCreatureTypesCount()
+        {
+            foreach(ICreatureType creatureType in CreatureTypes)
+            {
+                creatureType.ClearNumberOfCreatures();
+            }
         }
 
         internal bool CreaturesHaveEnergy()
@@ -107,18 +104,6 @@ namespace EvolutionSimulations
         public void MoveCreatures(double xLimit, double yLimit)
         {
             Creatures.MoveCreatures(xLimit, yLimit);
-        }
-
-        public void CreatureAdded(List<CreatureTrait> Traits)
-        {
-            int index = CreatureTypes.FindIndex(creatureType => creatureType.Traits.SequenceEqual(Traits));
-            CreatureTypes[index].NumberOfCreatures++;
-        }
-
-        public void CreatureRemoved(List<CreatureTrait> Traits)
-        {
-            int index = CreatureTypes.FindIndex(creatureType => creatureType.Traits.SequenceEqual(Traits));
-            CreatureTypes[index].NumberOfCreatures--;
         }
     }
 }

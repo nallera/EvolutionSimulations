@@ -1,15 +1,23 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
-namespace EvolutionSimulations.Interfaces
+namespace EvolutionSimulations
 {
-    interface ICreatureType
-    {
+    public interface ICreatureType
+    { 
         public string Name { get; }
+        public double Health { get; }
+        public double AttackPower { get; }
+        public double MaxSpeed { get; }
+        public double Reach { get; }
+        public double Energy { get; }
+        public bool IsHostile { get; }
         public int NumberOfCreatures { get; }
 
+        public double EnergySpentInFight { get; }
+        public double TakeDamageFromFight(Creature oponentCreature);
         public void AddCreature();
         public void RemoveCreature();
+        public void ClearNumberOfCreatures();
     }
 }

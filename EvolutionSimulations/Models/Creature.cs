@@ -1,8 +1,5 @@
-﻿using EvolutionSimulations.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Reflection.Metadata;
-using System.Text;
 
 namespace EvolutionSimulations
 {
@@ -18,7 +15,7 @@ namespace EvolutionSimulations
         public double Reach;
         public double Energy;
 
-        public ICreatureTypeBehavior CreatureTypeBehavior { get; set; }
+        public ICreatureType CreatureType { get; set; }
 
         public double FoodCollected;
         public double FoodCollectedLastDay;
@@ -38,7 +35,7 @@ namespace EvolutionSimulations
             AttackPower = source.AttackPower;
             MaxSpeed = source.MaxSpeed;
             Reach = source.Reach;
-            CreatureTypeBehavior = source.CreatureTypeBehavior;
+            CreatureType = source.CreatureType;
 
             FoodCollected = 0;
             FoodCollectedLastDay = 0;
@@ -52,17 +49,17 @@ namespace EvolutionSimulations
             CreaturesInReachIds = new List<int>(source.CreaturesInReachIds);
         }
 
-        public Creature(int id, ICreatureTypeBehavior creatureTypeBehavior)
+        public Creature(int id, ICreatureType creatureType)
         {
             Id = id;
 
-            CreatureTypeBehavior = creatureTypeBehavior;
+            CreatureType = creatureType;
 
-            Health = creatureTypeBehavior.Health;
-            AttackPower = creatureTypeBehavior.AttackPower;
-            MaxSpeed = creatureTypeBehavior.MaxSpeed;
-            Reach = creatureTypeBehavior.Reach;
-            Energy = creatureTypeBehavior.Energy;
+            Health = creatureType.Health;
+            AttackPower = creatureType.AttackPower;
+            MaxSpeed = creatureType.MaxSpeed;
+            Reach = creatureType.Reach;
+            Energy = creatureType.Energy;
 
             FoodCollected = 0;
             FoodCollectedLastDay = 0;
@@ -150,12 +147,12 @@ namespace EvolutionSimulations
 
         public void SpendEnergyInFight()
         {
-            Energy -= CreatureTypeBehavior.EnergySpentInFight;
+            Energy -= CreatureType.EnergySpentInFight;
         }
 
         public double TakeDamageFromFight(Creature creature)
         {
-            return CreatureTypeBehavior.TakeDamageFromFight(creature);
+            return CreatureType.TakeDamageFromFight(creature);
         }
 
         internal void CheckSurroundings(List<CreatureIdAndPosition> creatures, List<Food> food)
@@ -200,8 +197,8 @@ namespace EvolutionSimulations
 
         internal void Reset()
         {
-            Health = CreatureTypeBehavior.Health;
-            Energy = CreatureTypeBehavior.Energy;
+            Health = CreatureType.Health;
+            Energy = CreatureType.Energy;
         }
     }
 }

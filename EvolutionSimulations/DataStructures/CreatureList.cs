@@ -29,23 +29,18 @@ namespace EvolutionSimulations
             lastId = -1;
         }
         
-        public int AddCopyCreature(Creature sourceCreature)
+        public int AddCreature(ICreatureType creatureType)
         {
             lastId++;
-            creatures.Add(new Creature(sourceCreature) { Id = lastId});
-            return creatures.Count;
-        }
-
-        public int AddNewCreature(ICreatureTypeBehavior creatureTypeBehavior)
-        {
-            lastId++;
-            creatures.Add(new Creature(lastId, creatureTypeBehavior));
+            creatures.Add(new Creature(lastId, creatureType));
+            creatureType.AddCreature();
 
             return creatures.Count;
         }
 
         public void RemoveCreature(int id)
         {
+            creatures.Find(creature => creature.Id == id).CreatureType.RemoveCreature();
             creatures.RemoveAt(creatures.FindIndex(creature => creature.Id == id));
         }
 

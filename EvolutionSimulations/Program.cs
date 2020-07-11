@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using EvolutionSimulations.Models.CreatureTypes;
+using Newtonsoft.Json;
 using Serilog;
 using Serilog.Events;
 using System;
@@ -21,39 +22,28 @@ namespace EvolutionSimulations
                 xLimit = 15,
                 yLimit = 15,
                 simulationDays = 50,
-                stepsPerDay = 20,
+                stepsPerDay = 80,
                 foodPerDay = 80,
                 foodToSurvive = 1,
                 foodToReproduce = 2,
-                numberOfSimulations = 500,
+                numberOfSimulations = 1,
                 logOnlyPopulation = true
             };
 
             Terrain simulationTerrain = new Terrain(Parameters.xLimit, Parameters.yLimit);
 
-            Population initialPopulation = new Population(new List<CreatureType>
-            {
-                new CreatureType { CreatureTrait.Friendly },
-                new CreatureType { CreatureTrait.Hostile }
-            }, new CreatureCharacteristics
-            {
-                Health = 100.0,
-                AttackPower = 10.0,
-                MaxSpeed = 1.0,
-                Reach = 1.0,
-                Energy = (double)Parameters.stepsPerDay * 2
-            }) ;
+            List<ICreatureType> CreatureTypes = new List<ICreatureType>();
+            CreatureTypes.Add(new FriendlyType());
+            CreatureTypes.Add(new HostileType());
 
-            foreach (CreatureType creatureType in initialPopulation.CreatureTypes)
+            Population initialPopulation = new Population(CreatureTypes);
+
+            foreach (ICreatureType creatureType in initialPopulation.CreatureTypes)
             {
-                string traitsString = "";
+                string typesString = "";
 
-                foreach (CreatureTrait trait in creatureType.Traits)
-                {
-                    traitsString += trait.ToString() + ",";
-                }
-
-                Parameters.CreatureTypes.Add(traitsString.Trim(','));
+                typesString += creatureType.Name + ",";
+                Parameters.CreatureTypes.Add(typesString.Trim(','));
             }
 
             using (StreamWriter file = File.CreateText(Directory.GetCurrentDirectory() + @"\logs\parameters.json"))
@@ -62,12 +52,12 @@ namespace EvolutionSimulations
                 file.Write(jsonString);
             }
 
-            initialPopulation.AddNewCreature(initialPopulation.CreatureTypes[0]);
-            initialPopulation.AddNewCreature(initialPopulation.CreatureTypes[1]);
-            initialPopulation.AddNewCreature(initialPopulation.CreatureTypes[0]);
-            initialPopulation.AddNewCreature(initialPopulation.CreatureTypes[0]);
-            initialPopulation.AddNewCreature(initialPopulation.CreatureTypes[1]);
-            initialPopulation.AddNewCreature(initialPopulation.CreatureTypes[1]);
+            initialPopulation.AddCreature(initialPopulation.CreatureTypes[0]);
+            initialPopulation.AddCreature(initialPopulation.CreatureTypes[1]);
+            initialPopulation.AddCreature(initialPopulation.CreatureTypes[0]);
+            initialPopulation.AddCreature(initialPopulation.CreatureTypes[0]);
+            initialPopulation.AddCreature(initialPopulation.CreatureTypes[1]);
+            initialPopulation.AddCreature(initialPopulation.CreatureTypes[1]);
 
 
             Simulation simulationVar = new Simulation(simulationTerrain, Parameters.simulationDays, Parameters.stepsPerDay,
