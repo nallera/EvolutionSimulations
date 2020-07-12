@@ -52,6 +52,11 @@ namespace EvolutionSimulations
             FoodUnits.RemoveAll(f => f.Eaten);
         }
 
+        public bool FoodRemains()
+        {
+            return (FoodUnits.Count > 0);
+        }
+
         //public void PrintTerrain()
         //{
         //    foreach (var line in Cells)

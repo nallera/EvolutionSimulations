@@ -76,6 +76,14 @@ namespace EvolutionSimulations
             }
         }
 
+        internal void CountInitialCreatureTypes()
+        {
+            foreach (Creature creature in Creatures)
+            {
+                creature.CreatureType.AddCreature();
+            }
+        }
+
         internal bool CreaturesHaveEnergy()
         {
             return Creatures.HaveEnergy();

@@ -59,8 +59,9 @@ namespace EvolutionSimulations
             }
             PopulationResults.Clear();
 
-            CurrentPopulation.ClearCreatureTypesCount();
             CurrentPopulation = new Population(_initialPopulation);
+            CurrentPopulation.ClearCreatureTypesCount();
+            CurrentPopulation.CountInitialCreatureTypes();
         }
 
         public SingleSimulationResults RunSimulation(int foodPerDay, PositionType positionType)
@@ -73,12 +74,25 @@ namespace EvolutionSimulations
                     Log.Information($"All the creatures died on day {day - 1}, so no more days will be simulated.");
                     break;
                 }
+                
                 SetupDayStart(foodPerDay, positionType, day);
 
                 int step = 0;
-                while(step < _stepsPerDay && CurrentPopulation.CreaturesHaveEnergy())
+                while(step < _stepsPerDay && CurrentPopulation.CreaturesHaveEnergy() && CurrentTerrain.FoodRemains())
                 {
                     SimulateStep(day, CurrentTerrain.X, CurrentTerrain.Y);
+
+                    if (!CurrentPopulation.CreaturesHaveEnergy())
+                    {
+                        Log.Information($"All the creatures are exhausted on step {step - 1}, so the day is over.");
+                        break;
+                    }
+                    if (!CurrentTerrain.FoodRemains())
+                    {
+                        Log.Information($"All the food was eaten on step {step - 1}, so the day is over.");
+                        break;
+                    }
+
                     step++;
                 }
 

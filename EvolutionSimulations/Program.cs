@@ -21,22 +21,22 @@ namespace EvolutionSimulations
             {
                 xLimit = 15,
                 yLimit = 15,
-                simulationDays = 50,
-                stepsPerDay = 80,
-                foodPerDay = 80,
+                simulationDays = 100,
+                stepsPerDay = 100,
+                foodPerDay = 50,
                 foodToSurvive = 1,
                 foodToReproduce = 2,
-                numberOfSimulations = 1,
+                numberOfSimulations = 50,
                 logOnlyPopulation = true
             };
 
             Terrain simulationTerrain = new Terrain(Parameters.xLimit, Parameters.yLimit);
 
-            List<ICreatureType> CreatureTypes = new List<ICreatureType>();
-            CreatureTypes.Add(new FriendlyType());
-            CreatureTypes.Add(new HostileType());
+            List<ICreatureType> creatureTypes = new List<ICreatureType>();
+            creatureTypes.Add(new FriendlyType(false));
+            creatureTypes.Add(new HostileType(true));
 
-            Population initialPopulation = new Population(CreatureTypes);
+            Population initialPopulation = new Population(creatureTypes);
 
             foreach (ICreatureType creatureType in initialPopulation.CreatureTypes)
             {
@@ -53,10 +53,10 @@ namespace EvolutionSimulations
             }
 
             initialPopulation.AddCreature(initialPopulation.CreatureTypes[0]);
-            initialPopulation.AddCreature(initialPopulation.CreatureTypes[1]);
             initialPopulation.AddCreature(initialPopulation.CreatureTypes[0]);
             initialPopulation.AddCreature(initialPopulation.CreatureTypes[0]);
-            initialPopulation.AddCreature(initialPopulation.CreatureTypes[1]);
+            initialPopulation.AddCreature(initialPopulation.CreatureTypes[0]);
+            initialPopulation.AddCreature(initialPopulation.CreatureTypes[0]);
             initialPopulation.AddCreature(initialPopulation.CreatureTypes[1]);
 
 
