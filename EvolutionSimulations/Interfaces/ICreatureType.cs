@@ -15,6 +15,9 @@ namespace EvolutionSimulations
         public int NumberOfCreatures { get; }
 
         public double EnergySpentInFight { get; }
+        public double ReachEnergyMultiplier { get; }
+        public double SpeedEnergyMultiplier { get; }
+
         public double TakeDamageFromFight(Creature oponentCreature);
         public void AddCreature();
         public void RemoveCreature();

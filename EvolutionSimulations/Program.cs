@@ -14,27 +14,33 @@ namespace EvolutionSimulations
         static void Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
-               .WriteTo.Console()
+               //.WriteTo.Console()
                .CreateLogger();
+
+            var watch = new System.Diagnostics.Stopwatch();
+
+            watch.Start();
 
             SimulationParameters Parameters = new SimulationParameters
             {
                 xLimit = 15,
                 yLimit = 15,
-                simulationDays = 10,
-                stepsPerDay = 10,
+                simulationDays = 100,
+                stepsPerDay = 180,
                 foodPerDay = 50,
                 foodToSurvive = 1,
                 foodToReproduce = 2,
-                numberOfSimulations = 1,
+                numberOfSimulations = 100,
                 logOnlyPopulation = true
             };
 
             Terrain simulationTerrain = new Terrain(Parameters.xLimit, Parameters.yLimit);
 
             CreatureTypeList creatureTypes = new CreatureTypeList();
-            creatureTypes.Add(new FriendlyType(), mutationProbability: 0.05);
-            creatureTypes.Add(new HostileType(), mutationProbability: 0.05);
+            creatureTypes.Add(new FriendlyType());
+            creatureTypes.Add(new HostileType(), mutationProbability: 0.02);
+            creatureTypes.Add(new QuickType(), mutationProbability: 0.02);
+            creatureTypes.Add(new BigType(), mutationProbability: 0.02);
 
             Population initialPopulation = new Population(creatureTypes);
 
@@ -57,7 +63,7 @@ namespace EvolutionSimulations
             initialPopulation.AddCreature(initialPopulation.CreatureTypes[0]);
             initialPopulation.AddCreature(initialPopulation.CreatureTypes[0]);
             initialPopulation.AddCreature(initialPopulation.CreatureTypes[0]);
-            initialPopulation.AddCreature(initialPopulation.CreatureTypes[1]);
+            initialPopulation.AddCreature(initialPopulation.CreatureTypes[0]);
 
 
             Simulation simulationVar = new Simulation(simulationTerrain, Parameters.simulationDays, Parameters.stepsPerDay,
@@ -72,6 +78,10 @@ namespace EvolutionSimulations
             }
 
             results.PrintToFile();
+
+            watch.Stop();
+
+            Log.Information($"Simulation duration: {watch.ElapsedMilliseconds * 0.001} seconds.");
         }
     }
 }

@@ -88,22 +88,38 @@ namespace EvolutionSimulations
                 {
                     foreach (int foodId in creature.FoodInReachIds)
                     {
-                        creature.FoodCollected += 1.0 / foodUnits[foodId].ReachingCreatures.Count;
-                        foodUnits[foodId].Eaten = true;
-                        Log.Information($"Creature ID#{creature.Id} collected {1.0 / foodUnits[foodId].ReachingCreatures.Count:N2} food " +
-                            $"from food ID#{foodId}, {foodUnits[foodId].ReachingCreatures.Count} creature(s) ate from this food.");
+                        if (creature.HasEnergyToEat())
+                        {
+                            creature.CollectFood(1.0 / foodUnits[foodId].ReachingCreatures.Count);
+                            foodUnits[foodId].Eaten = true;
+                            Log.Information($"Creature ID#{creature.Id} collected {1.0 / foodUnits[foodId].ReachingCreatures.Count:N2} food " +
+                                $"from food ID#{foodId}, {foodUnits[foodId].ReachingCreatures.Count} creature(s) ate from this food.");
+                        }
+                        else
+                        {
+                            Log.Information($"Creature ID#{creature.Id} doesn't have enough energy to eat.");
+                            break;
+                        }
                     }
                 }
                 if (creature.CreaturesInReachIds.Count != 0)
                 {
                     foreach (int creatureInReachId in creature.CreaturesInReachIds)
                     {
-                        double damageTaken = creatures.Find(c => c.Id == creatureInReachId).TakeDamageFromFight(creature);
-                        if (damageTaken != 0.0)
+                        if (creature.HasEnergyToFight())
                         {
-                            Log.Information($"Creature ID#{creature.Id} fought with creature ID#{creatureInReachId}, and caused it {damageTaken:N2} damage.");
+                            double damageTaken = creatures.Find(c => c.Id == creatureInReachId).TakeDamageFromFight(creature);
+                            if (damageTaken != 0.0)
+                            {
+                                Log.Information($"Creature ID#{creature.Id} fought with creature ID#{creatureInReachId}, and caused it {damageTaken:N2} damage.");
+                            }
+                            creature.SpendEnergyInFight();
                         }
-                        creature.SpendEnergyInFight();
+                        else
+                        {
+                            Log.Information($"Creature ID#{creature.Id} doesn't have enough energy to fight.");
+                            break;
+                        }
                     }
                 }
             }
@@ -115,7 +131,7 @@ namespace EvolutionSimulations
 
             foreach (Creature creature in creatures)
             {
-                if (creature.Energy > 0)
+                if (creature.HasEnergy())
                 {
                     result = true;
                     break;
@@ -145,7 +161,8 @@ namespace EvolutionSimulations
         {
             foreach (Creature creature in creatures)
             {
-                creature.Move(xLimit, yLimit);
+                if(creature.HasEnergyToMove()) creature.Move(xLimit, yLimit);
+                else Log.Information($"Creature ID#{creature.Id} doesn't have enough energy to move.");
             }
         }
 

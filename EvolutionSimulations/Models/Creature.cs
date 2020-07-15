@@ -92,7 +92,13 @@ namespace EvolutionSimulations
             Position.X = newXPosition;
             Position.Y = newYPosition;
 
-            Energy -= speed;
+            Energy -= speed * CreatureType.SpeedEnergyMultiplier;
+        }
+
+        internal void CollectFood(double foodAmount)
+        {
+            FoodCollected += foodAmount;
+            Energy -= Math.PI * Math.Pow(Reach,2) * CreatureType.ReachEnergyMultiplier;
         }
 
         internal void SetPosition(PositionType positionType, double xLimit, double yLimit)
@@ -120,6 +126,25 @@ namespace EvolutionSimulations
                     }
                     break;
             }
+        }
+
+        internal bool HasEnergy()
+        {
+            return Energy > 0;
+        }
+
+        internal bool HasEnergyToFight()
+        {
+            return Energy > CreatureType.EnergySpentInFight;
+        }
+
+        internal bool HasEnergyToEat()
+        {
+            return Energy > Reach * CreatureType.ReachEnergyMultiplier;
+        }
+        internal bool HasEnergyToMove()
+        {
+            return Energy > MaxSpeed * CreatureType.SpeedEnergyMultiplier;
         }
 
         public void DetermineNextStatusAndClearFood(int foodToSurvive, int foodToReproduce)
