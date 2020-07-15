@@ -52,18 +52,19 @@ namespace EvolutionSimulations
             }
         }
 
-        public List<CreatureIdAndPosition> GetPositions()
-        {
-            List<CreatureIdAndPosition> positions = new List<CreatureIdAndPosition>();
+        //public List<CreatureIdAndPositionandReachingCreatures> GetPositions()
+        //{
+        //    List<CreatureIdAndPositionandReachingCreatures> positions = new List<CreatureIdAndPositionandReachingCreatures>();
 
-            foreach (Creature creature in creatures)
-            {
-                positions.Add(new CreatureIdAndPosition { CreatureId = creature.Id, 
-                                                            Position = new Coordinate(creature.Position) });
-            }
+        //    foreach (Creature creature in creatures)
+        //    {
+        //        positions.Add(new CreatureIdAndPositionandReachingCreatures { CreatureId = creature.Id, 
+        //                                                                    Position = new Coordinate(creature.Position),
+        //                                                                    ReachingCreaturesIds = new List<int>(creature.ReachingCreaturesIds)});
+        //    }
 
-            return positions;
-        }
+        //    return positions;
+        //}
 
         public List<Creature> FindAll(Predicate<Creature> match)
         {
@@ -76,7 +77,7 @@ namespace EvolutionSimulations
 
             foreach (Creature creature in creatures)
             {
-                creature.CheckSurroundings(GetPositions(), food);
+                creature.CheckSurroundings(this, food);
             }
         }
 
@@ -88,10 +89,11 @@ namespace EvolutionSimulations
                 {
                     foreach (int foodId in creature.FoodInReachIds)
                     {
-                        if (creature.HasEnergyToEat())
+                        if (creature.HasEnergy())
                         {
                             creature.CollectFood(1.0 / foodUnits[foodId].ReachingCreatures.Count);
                             foodUnits[foodId].Eaten = true;
+
                             Log.Information($"Creature ID#{creature.Id} collected {1.0 / foodUnits[foodId].ReachingCreatures.Count:N2} food " +
                                 $"from food ID#{foodId}, {foodUnits[foodId].ReachingCreatures.Count} creature(s) ate from this food.");
                         }
@@ -106,13 +108,21 @@ namespace EvolutionSimulations
                 {
                     foreach (int creatureInReachId in creature.CreaturesInReachIds)
                     {
-                        if (creature.HasEnergyToFight())
+                        if (creature.HasEnergy())
                         {
                             double damageTaken = creatures.Find(c => c.Id == creatureInReachId).TakeDamageFromFight(creature);
-                            if (damageTaken != 0.0)
+
+                            if (damageTaken != 0.0) Log.Information($"Creature ID#{creature.Id} fought with creature ID#{creatureInReachId}, " +
+                                $"and caused it {damageTaken:N2} damage.");
+
+                            if (creature.CreatureType.IsCarnivore)
                             {
-                                Log.Information($"Creature ID#{creature.Id} fought with creature ID#{creatureInReachId}, and caused it {damageTaken:N2} damage.");
+                                if (creatures.Find(c => c.Id == creatureInReachId).Health <= 0.0)
+                                    creature.CollectFood(3.0 / creatures.Find(c => c.Id == creatureInReachId).ReachingCreaturesIds.Count);
+                                else creature.CollectFood(1.0 / creatures.Find(c => c.Id == creatureInReachId).ReachingCreaturesIds.Count);
                             }
+                                
+
                             creature.SpendEnergyInFight();
                         }
                         else
@@ -161,7 +171,7 @@ namespace EvolutionSimulations
         {
             foreach (Creature creature in creatures)
             {
-                if(creature.HasEnergyToMove()) creature.Move(xLimit, yLimit);
+                if(creature.HasEnergy()) creature.Move(xLimit, yLimit);
                 else Log.Information($"Creature ID#{creature.Id} doesn't have enough energy to move.");
             }
         }

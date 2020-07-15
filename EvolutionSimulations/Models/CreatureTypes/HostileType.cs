@@ -13,9 +13,12 @@ namespace EvolutionSimulations.Models.CreatureTypes
         public double Reach => 1.0;
         public double Energy => 40.0;
         public bool IsHostile => true;
+        public bool IsHerbivore => true;
+        public bool IsCarnivore => false;
         public int NumberOfCreatures { get; private set; }
         public double ReachEnergyMultiplier => 1.0;
         public double SpeedEnergyMultiplier => 1.0;
+        public double EnergySpentInFight => 10.0;
 
         public HostileType()
         {
@@ -31,8 +34,6 @@ namespace EvolutionSimulations.Models.CreatureTypes
         {
             NumberOfCreatures--;
         }
-
-        double ICreatureType.EnergySpentInFight => 20.0;
 
         public double TakeDamageFromFight(Creature oponentCreature)
         {

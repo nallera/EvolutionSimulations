@@ -4,23 +4,23 @@ using System.Text;
 
 namespace EvolutionSimulations.Models.CreatureTypes
 {
-    class QuickType : ICreatureType
+    class QuickHostileType : ICreatureType
     {
-        public string Name => "Quick";
+        public string Name => "QuickAndHostile";
         public double Health => 100.0;
-        public double AttackPower => 10.0;
+        public double AttackPower => 20.0;
         public double MaxSpeed => 2.0;
         public double Reach => 1.0;
         public double Energy => 40.0;
         public double ReachEnergyMultiplier => 1.0;
         public double SpeedEnergyMultiplier => 2.0;
         public double EnergySpentInFight => 10.0;
-        public bool IsHostile => false;
+        public bool IsHostile => true;
         public bool IsHerbivore => true;
         public bool IsCarnivore => false;
         public int NumberOfCreatures { get; private set; }
 
-        public QuickType()
+        public QuickHostileType()
         {
             NumberOfCreatures = 0;
         }
@@ -37,14 +37,7 @@ namespace EvolutionSimulations.Models.CreatureTypes
 
         public double TakeDamageFromFight(Creature oponentCreature)
         {
-            if (oponentCreature.CreatureType.IsHostile)
-            {
-                return oponentCreature.AttackPower * 0.5;
-            }
-            else
-            {
-                return 0.0;
-            }
+            return oponentCreature.AttackPower * 0.5;
         }
 
         public void ClearNumberOfCreatures()

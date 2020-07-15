@@ -25,6 +25,7 @@ namespace EvolutionSimulations
 
         public List<int> FoodInReachIds;
         public List<int> CreaturesInReachIds;
+        public List<int> ReachingCreaturesIds;
 
 
         public Creature(Creature source)
@@ -47,6 +48,7 @@ namespace EvolutionSimulations
 
             FoodInReachIds = new List<int>(source.FoodInReachIds);
             CreaturesInReachIds = new List<int>(source.CreaturesInReachIds);
+            ReachingCreaturesIds = new List<int>(source.ReachingCreaturesIds);
         }
 
         public Creature(int id, ICreatureType creatureType)
@@ -71,6 +73,7 @@ namespace EvolutionSimulations
 
             FoodInReachIds = new List<int>();
             CreaturesInReachIds = new List<int>();
+            ReachingCreaturesIds = new List<int>();
         }
 
         public void Move(double xLimit, double yLimit)
@@ -133,20 +136,6 @@ namespace EvolutionSimulations
             return Energy > 0;
         }
 
-        internal bool HasEnergyToFight()
-        {
-            return Energy > CreatureType.EnergySpentInFight;
-        }
-
-        internal bool HasEnergyToEat()
-        {
-            return Energy > Reach * CreatureType.ReachEnergyMultiplier;
-        }
-        internal bool HasEnergyToMove()
-        {
-            return Energy > MaxSpeed * CreatureType.SpeedEnergyMultiplier;
-        }
-
         public void DetermineNextStatusAndClearFood(int foodToSurvive, int foodToReproduce)
         {
             if (Health <= 0.0) NextStatus = LifeStatus.Die;
@@ -180,9 +169,9 @@ namespace EvolutionSimulations
             return CreatureType.TakeDamageFromFight(creature);
         }
 
-        internal void CheckSurroundings(List<CreatureIdAndPosition> creatures, List<Food> food)
+        internal void CheckSurroundings(CreatureList creatures, List<Food> food)
         {
-            FoodInReachIds = CheckFoodInReach(food);
+            if (CreatureType.IsHerbivore) FoodInReachIds = CheckFoodInReach(food);
             CreaturesInReachIds = CheckCreaturesInReach(creatures);
         }
 
@@ -190,15 +179,20 @@ namespace EvolutionSimulations
         {
             FoodInReachIds.Clear();
             CreaturesInReachIds.Clear();
+            ReachingCreaturesIds.Clear();
         }
 
-        public List<int> CheckCreaturesInReach(List<CreatureIdAndPosition> creatures)
+        public List<int> CheckCreaturesInReach(CreatureList creatures)
         {
             List<int> creaturesInReach = new List<int>();
 
-            foreach (CreatureIdAndPosition creature in creatures)
+            foreach (Creature creature in creatures)
             {
-                if (creature.CreatureId != Id && Position.InReach(creature.Position, Reach)) creaturesInReach.Add(creature.CreatureId);
+                if (creature.Id != Id && Position.InReach(creature.Position, Reach))
+                {
+                    creaturesInReach.Add(creature.Id);
+                    creature.ReachingCreaturesIds.Add(Id);
+                }
             }
 
             return creaturesInReach;

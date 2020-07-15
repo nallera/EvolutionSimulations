@@ -23,14 +23,14 @@ namespace EvolutionSimulations
 
             SimulationParameters Parameters = new SimulationParameters
             {
-                xLimit = 15,
-                yLimit = 15,
+                xLimit = 20,
+                yLimit = 20,
                 simulationDays = 100,
                 stepsPerDay = 180,
-                foodPerDay = 50,
+                foodPerDay = 80,
                 foodToSurvive = 1,
                 foodToReproduce = 2,
-                numberOfSimulations = 100,
+                numberOfSimulations = 10,
                 logOnlyPopulation = true
             };
 
@@ -38,9 +38,11 @@ namespace EvolutionSimulations
 
             CreatureTypeList creatureTypes = new CreatureTypeList();
             creatureTypes.Add(new FriendlyType());
-            creatureTypes.Add(new HostileType(), mutationProbability: 0.02);
-            creatureTypes.Add(new QuickType(), mutationProbability: 0.02);
-            creatureTypes.Add(new BigType(), mutationProbability: 0.02);
+            //creatureTypes.Add(new HostileType(), mutationProbability: 0.02);
+            //creatureTypes.Add(new QuickType(), mutationProbability: 0.02);
+            //creatureTypes.Add(new QuickHostileType(), mutationProbability: 0.02);
+            //creatureTypes.Add(new BigType(), mutationProbability: 0.02);
+            creatureTypes.Add(new CarnivoreType(), mutationProbability: 0.02);
 
             Population initialPopulation = new Population(creatureTypes);
 
@@ -72,7 +74,7 @@ namespace EvolutionSimulations
 
             for (int simulationNumber = 0; simulationNumber < Parameters.numberOfSimulations; simulationNumber++)
             {
-                Console.WriteLine($"Simulation #{simulationNumber}");
+                Console.WriteLine($"Simulation #{simulationNumber + 1}");
                 simulationVar.SetNewSimulation();
                 results.AddSingleSimulationResults(simulationVar.RunSimulation(Parameters.foodPerDay, PositionType.Random));
             }
@@ -81,7 +83,7 @@ namespace EvolutionSimulations
 
             watch.Stop();
 
-            Log.Information($"Simulation duration: {watch.ElapsedMilliseconds * 0.001} seconds.");
+            Console.WriteLine($"Simulation duration: {watch.ElapsedMilliseconds * 0.001:N2} seconds.");
         }
     }
 }
