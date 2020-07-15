@@ -14,27 +14,27 @@ namespace EvolutionSimulations
         static void Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
-               //.WriteTo.Console()
+               .WriteTo.Console()
                .CreateLogger();
 
             SimulationParameters Parameters = new SimulationParameters
             {
                 xLimit = 15,
                 yLimit = 15,
-                simulationDays = 100,
-                stepsPerDay = 100,
+                simulationDays = 10,
+                stepsPerDay = 10,
                 foodPerDay = 50,
                 foodToSurvive = 1,
                 foodToReproduce = 2,
-                numberOfSimulations = 50,
+                numberOfSimulations = 1,
                 logOnlyPopulation = true
             };
 
             Terrain simulationTerrain = new Terrain(Parameters.xLimit, Parameters.yLimit);
 
-            List<ICreatureType> creatureTypes = new List<ICreatureType>();
-            creatureTypes.Add(new FriendlyType(false));
-            creatureTypes.Add(new HostileType(true));
+            CreatureTypeList creatureTypes = new CreatureTypeList();
+            creatureTypes.Add(new FriendlyType(), mutationProbability: 0.05);
+            creatureTypes.Add(new HostileType(), mutationProbability: 0.05);
 
             Population initialPopulation = new Population(creatureTypes);
 

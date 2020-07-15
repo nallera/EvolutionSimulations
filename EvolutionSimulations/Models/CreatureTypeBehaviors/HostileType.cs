@@ -13,13 +13,11 @@ namespace EvolutionSimulations.Models.CreatureTypes
         public double Reach => 1.0;
         public double Energy => 40.0;
         public bool IsHostile => true;
-        public bool IsPossibleMutation { get; }
         public int NumberOfCreatures { get; private set; }
 
-        public HostileType(bool isPossibleMutation)
+        public HostileType()
         {
             NumberOfCreatures = 0;
-            IsPossibleMutation = isPossibleMutation;
         }
 
         public void AddCreature()

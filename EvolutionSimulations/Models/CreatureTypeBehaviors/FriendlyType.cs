@@ -14,16 +14,13 @@ namespace EvolutionSimulations.Models.CreatureTypes
         public double Reach => 1.0;
         public double Energy => 40.0;
         public bool IsHostile => false;
-        public bool IsPossibleMutation { get; }
         public int NumberOfCreatures { get; private set; }
 
         double ICreatureType.EnergySpentInFight => 10.0;
 
-
-        public FriendlyType(bool isPossibleMutation)
+        public FriendlyType()
         {
             NumberOfCreatures = 0;
-            IsPossibleMutation = isPossibleMutation;
         }
 
         public void AddCreature()
@@ -52,5 +49,6 @@ namespace EvolutionSimulations.Models.CreatureTypes
         {
             NumberOfCreatures = 0;
         }
+
     }
 }

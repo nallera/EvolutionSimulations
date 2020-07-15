@@ -7,11 +7,11 @@ namespace EvolutionSimulations
 {
     public class Population
     {
-        public List<ICreatureType> CreatureTypes { get; set; }
+        public CreatureTypeList CreatureTypes { get; set; }
         public CreatureList Creatures;
         public int CreatureCount { get { return Creatures.Count; } }
 
-        public Population(List<ICreatureType> creatureTypes)
+        public Population(CreatureTypeList creatureTypes)
         {
             CreatureTypes = creatureTypes;
             Creatures = new CreatureList();
@@ -54,7 +54,8 @@ namespace EvolutionSimulations
         {
             foreach (Creature reproducingCreature in Creatures.FindAll(creature => creature.NextStatus == LifeStatus.Reproduce))
             {
-                AddCreature(reproducingCreature.CreatureType);
+                ICreatureType newbornCreatureType = CreatureTypes.Mutate(reproducingCreature.CreatureType);
+                AddCreature(newbornCreatureType);
             }
 
             foreach (Creature dyingCreature in Creatures.FindAll(creature => creature.NextStatus == LifeStatus.Die))

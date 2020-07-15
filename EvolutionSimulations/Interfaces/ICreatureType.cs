@@ -12,7 +12,6 @@ namespace EvolutionSimulations
         public double Reach { get; }
         public double Energy { get; }
         public bool IsHostile { get; }
-        public bool IsPossibleMutation { get; }
         public int NumberOfCreatures { get; }
 
         public double EnergySpentInFight { get; }
