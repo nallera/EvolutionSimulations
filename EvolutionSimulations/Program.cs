@@ -13,12 +13,9 @@ namespace EvolutionSimulations
     {
         static void Main(string[] args)
         {
-            Log.Logger = new LoggerConfiguration()
-               //.WriteTo.Console()
-               .CreateLogger();
+            SetUpLogger(log: false);
 
             var watch = new System.Diagnostics.Stopwatch();
-
             watch.Start();
 
             SimulationParameters Parameters = new SimulationParameters
@@ -30,7 +27,7 @@ namespace EvolutionSimulations
                 foodPerDay = 80,
                 foodToSurvive = 1,
                 foodToReproduce = 2,
-                numberOfSimulations = 10,
+                numberOfSimulations = 100,
                 logOnlyPopulation = true
             };
 
@@ -38,10 +35,10 @@ namespace EvolutionSimulations
 
             CreatureTypeList creatureTypes = new CreatureTypeList();
             creatureTypes.Add(new FriendlyType());
-            //creatureTypes.Add(new HostileType(), mutationProbability: 0.02);
-            //creatureTypes.Add(new QuickType(), mutationProbability: 0.02);
-            //creatureTypes.Add(new QuickHostileType(), mutationProbability: 0.02);
-            //creatureTypes.Add(new BigType(), mutationProbability: 0.02);
+            creatureTypes.Add(new HostileType(), mutationProbability: 0.02);
+            creatureTypes.Add(new QuickType(), mutationProbability: 0.02);
+            creatureTypes.Add(new QuickHostileType(), mutationProbability: 0.02);
+            creatureTypes.Add(new BigType(), mutationProbability: 0.02);
             creatureTypes.Add(new CarnivoreType(), mutationProbability: 0.02);
 
             Population initialPopulation = new Population(creatureTypes);
@@ -84,6 +81,14 @@ namespace EvolutionSimulations
             watch.Stop();
 
             Console.WriteLine($"Simulation duration: {watch.ElapsedMilliseconds * 0.001:N2} seconds.");
+        }
+
+        private static void SetUpLogger(bool log)
+        {
+            var config = new LoggerConfiguration();
+            if (log) config.WriteTo.Console();
+
+            Log.Logger = config.CreateLogger();
         }
     }
 }

@@ -57,7 +57,7 @@ namespace EvolutionSimulations
             CreatureTypes.Clear();
         }
 
-        public ICreatureType Mutate(ICreatureType creatureType)
+        public ICreatureType Mutate(ICreatureType creatureType, int id)
         {
             ICreatureType MutationResult = creatureType;
 
@@ -68,7 +68,7 @@ namespace EvolutionSimulations
                 if (MutationTypeRanges[index].IsInRange(value) && CreatureTypes[index] != creatureType)
                 {
                     MutationResult = CreatureTypes[index];
-                    Log.Information($"A mutation occured! A {creatureType.Name} creature mutated into a {MutationResult.Name} creature.");
+                    Log.Information($"A mutation occured! Creature ID#{id}, which is a {creatureType.Name} creature, had a {MutationResult.Name} child.");
                     break;
                 }
             }

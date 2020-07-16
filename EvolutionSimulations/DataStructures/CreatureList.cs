@@ -99,7 +99,7 @@ namespace EvolutionSimulations
                         }
                         else
                         {
-                            Log.Information($"Creature ID#{creature.Id} doesn't have enough energy to eat.");
+                            //Log.Information($"Creature ID#{creature.Id} doesn't have enough energy to eat.");
                             break;
                         }
                     }
@@ -118,8 +118,18 @@ namespace EvolutionSimulations
                             if (creature.CreatureType.IsCarnivore)
                             {
                                 if (creatures.Find(c => c.Id == creatureInReachId).Health <= 0.0)
-                                    creature.CollectFood(3.0 / creatures.Find(c => c.Id == creatureInReachId).ReachingCreaturesIds.Count);
-                                else creature.CollectFood(1.0 / creatures.Find(c => c.Id == creatureInReachId).ReachingCreaturesIds.Count);
+                                {
+                                    double foodEaten = 4.0 / creatures.Find(c => c.Id == creatureInReachId).ReachingCreaturesIds.Count;
+                                    creature.CollectFood(foodEaten);
+                                    Log.Information($"Creature ID#{creature.Id} ate {foodEaten:N2} food from creature ID#{creatureInReachId}, " +
+                                        $"which was killed.");
+                                }
+                                else
+                                {
+                                    double foodEaten = 1.0 / creatures.Find(c => c.Id == creatureInReachId).ReachingCreaturesIds.Count;
+                                    creature.CollectFood(foodEaten);
+                                    Log.Information($"Creature ID#{creature.Id} ate {foodEaten:N2} food from creature ID#{creatureInReachId}.");
+                                }
                             }
                                 
 
@@ -127,7 +137,7 @@ namespace EvolutionSimulations
                         }
                         else
                         {
-                            Log.Information($"Creature ID#{creature.Id} doesn't have enough energy to fight.");
+                            //Log.Information($"Creature ID#{creature.Id} doesn't have enough energy to fight.");
                             break;
                         }
                     }
@@ -172,7 +182,7 @@ namespace EvolutionSimulations
             foreach (Creature creature in creatures)
             {
                 if(creature.HasEnergy()) creature.Move(xLimit, yLimit);
-                else Log.Information($"Creature ID#{creature.Id} doesn't have enough energy to move.");
+                //else Log.Information($"Creature ID#{creature.Id} doesn't have enough energy to move.");
             }
         }
 

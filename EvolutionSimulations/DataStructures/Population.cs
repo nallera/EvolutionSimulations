@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,9 +55,11 @@ namespace EvolutionSimulations
         {
             foreach (Creature reproducingCreature in Creatures.FindAll(creature => creature.NextStatus == LifeStatus.Reproduce))
             {
-                ICreatureType newbornCreatureType = CreatureTypes.Mutate(reproducingCreature.CreatureType);
+                ICreatureType newbornCreatureType = CreatureTypes.Mutate(reproducingCreature.CreatureType, reproducingCreature.Id);
                 AddCreature(newbornCreatureType);
             }
+
+            Log.Information("");
 
             foreach (Creature dyingCreature in Creatures.FindAll(creature => creature.NextStatus == LifeStatus.Die))
             {

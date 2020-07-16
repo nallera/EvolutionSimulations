@@ -166,7 +166,10 @@ namespace EvolutionSimulations
 
         public double TakeDamageFromFight(Creature creature)
         {
-            return CreatureType.TakeDamageFromFight(creature);
+            double damage = CreatureType.TakeDamageFromFight(creature);
+            Health -= damage;
+
+            return damage;
         }
 
         internal void CheckSurroundings(CreatureList creatures, List<Food> food)

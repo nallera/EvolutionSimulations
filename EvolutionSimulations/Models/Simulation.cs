@@ -72,6 +72,7 @@ namespace EvolutionSimulations
                 if (CurrentPopulation.CreatureCount == 0)
                 {
                     Log.Information($"All the creatures died on day {day - 1}, so no more days will be simulated.");
+                    Log.Information("");
                     break;
                 }
                 
@@ -85,11 +86,13 @@ namespace EvolutionSimulations
                     if (!CurrentPopulation.CreaturesHaveEnergy())
                     {
                         Log.Information($"All the creatures are exhausted on step {step - 1}, so the day is over.");
+                        Log.Information("");
                         break;
                     }
                     if (!CurrentTerrain.FoodRemains())
                     {
                         Log.Information($"All the food was eaten on step {step - 1}, so the day is over.");
+                        Log.Information("");
                         break;
                     }
 
@@ -99,6 +102,7 @@ namespace EvolutionSimulations
                 StorePopulation(day);
 
                 DetermineCreaturesNextStatus();
+
                 PrintCreatures(CurrentPopulation.Creatures, day, false);
                 PrintCreaturesNextStatus(CurrentPopulation.Creatures);
             }
@@ -142,7 +146,7 @@ namespace EvolutionSimulations
                         break;
                 }
 
-                Log.Information($"Creature ID#{creature.Id} collected {creature.FoodCollectedLastDay} food{phraseAboutHealth} So, next day, it will {nextStatusReadable}.");
+                Log.Information($"Creature ID#{creature.Id} collected {creature.FoodCollectedLastDay:N2} food{phraseAboutHealth} So, next day, it will {nextStatusReadable}.");
             }
             Log.Information("");
         }
@@ -171,6 +175,7 @@ namespace EvolutionSimulations
 
         private void PrintCreatures(CreatureList currentCreatures, int day, bool beginningOfDay)
         {
+            Log.Information("");
             Log.Information($"Creatures {(beginningOfDay ? "that start" : "at the end of")} day {day}:");
             foreach (Creature creature in currentCreatures)
             {
@@ -184,16 +189,13 @@ namespace EvolutionSimulations
             Log.Information($"Population at the {(beginningOfDay ? "start" : "end")} of day {day}:");
             foreach (ICreatureType creatureType in CurrentPopulation.CreatureTypes)
             {
-                Log.Information($"Number of creatures: {creatureType.NumberOfCreatures}");
+                Log.Information($"Number of {creatureType.Name} creatures: {creatureType.NumberOfCreatures}");
             }
+            Log.Information("");
         }
 
         private void SimulateStep(int day, double xLimit, double yLimit)
         {
-            foreach (Creature creature in CurrentPopulation.Creatures)
-            {
-                Log.Information($"Creature ID#{creature.Id} position X:{creature.Position.X:N2}, Y:{creature.Position.Y:N2}");
-            }
             CurrentPopulation.MoveCreatures(xLimit, yLimit);
             if(!_logOnlyPopulation) StoreStepResults(day);
             DetermineStepActions();
