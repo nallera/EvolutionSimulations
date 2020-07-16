@@ -4,23 +4,23 @@ using System.Text;
 
 namespace EvolutionSimulations.Models.CreatureTypes
 {
-    class HostileType : ICreatureType
+    class BigHerbivoreType : ICreatureType
     {
-        public string Name => "Hostile";
+        public string Name => "BigHerbivore";
         public double Health => 100.0;
         public double AttackPower => 20.0;
-        public double MaxSpeed => 1.0;
-        public double Reach => 1.0;
+        public double MaxSpeed => 0.7;
+        public double Reach => 2.0;
         public double Energy => 40.0;
-        public bool IsHostile => true;
+        public double ReachEnergyMultiplier => 2.0;
+        public double SpeedEnergyMultiplier => 2.0;
+        public double EnergySpentInFight => 10.0;
+        public bool IsHostile => false;
         public bool IsHerbivore => true;
         public bool IsCarnivore => false;
         public int NumberOfCreatures { get; private set; }
-        public double ReachEnergyMultiplier => 1.0;
-        public double SpeedEnergyMultiplier => 1.0;
-        public double EnergySpentInFight => 10.0;
 
-        public HostileType()
+        public BigHerbivoreType()
         {
             NumberOfCreatures = 0;
         }
@@ -37,7 +37,14 @@ namespace EvolutionSimulations.Models.CreatureTypes
 
         public double TakeDamageFromFight(Creature oponentCreature)
         {
-            return oponentCreature.AttackPower;
+            if (oponentCreature.CreatureType.IsHostile)
+            {
+                return oponentCreature.AttackPower * 0.5;
+            }
+            else
+            {
+                return 0.0;
+            }
         }
 
         public void ClearNumberOfCreatures()

@@ -34,12 +34,14 @@ namespace EvolutionSimulations
             Terrain simulationTerrain = new Terrain(Parameters.xLimit, Parameters.yLimit);
 
             CreatureTypeList creatureTypes = new CreatureTypeList();
-            creatureTypes.Add(new FriendlyType());
-            creatureTypes.Add(new HostileType(), mutationProbability: 0.02);
-            creatureTypes.Add(new QuickType(), mutationProbability: 0.02);
-            creatureTypes.Add(new QuickHostileType(), mutationProbability: 0.02);
-            creatureTypes.Add(new BigType(), mutationProbability: 0.02);
+            creatureTypes.Add(new HerbivoreType());
+            //creatureTypes.Add(new HostileHerbivoreType(), mutationProbability: 0.02);
+            //creatureTypes.Add(new QuickHerbivoreType(), mutationProbability: 0.02);
+            //creatureTypes.Add(new QuickHostileHerbivoreType(), mutationProbability: 0.02);
+            //creatureTypes.Add(new BigHerbivoreType(), mutationProbability: 0.02);
+            //creatureTypes.Add(new BigHostileHerbivoreType(), mutationProbability: 0.02);
             creatureTypes.Add(new CarnivoreType(), mutationProbability: 0.02);
+            creatureTypes.Add(new OmnivoreType(), mutationProbability: 0.02);
 
             Population initialPopulation = new Population(creatureTypes);
 
